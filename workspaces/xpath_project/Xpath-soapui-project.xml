@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="09da32ad-ba33-47fb-ae69-378e54fe9829" activeEnvironment="Default" name="Xpath" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="f76de7da-2a8c-4e43-98ee-3581d7651044" wsaVersion="NONE" name="xpath" type="wsdl" bindingName="{urn:megaware:/mediate/qa/run/xpath/xpath/xpath.wsdl}xpathSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="http://${basicAddress}/mediate/qa/run/xpath/xpath?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://192.168.0.130:57720/mediate/qa/run/xpath/xpath?WSDL"><con:part><con:url>http://192.168.0.130:57720/mediate/qa/run/xpath/xpath?WSDL</con:url><con:content><![CDATA[<definitions targetNamespace="urn:megaware:/mediate/qa/run/xpath/xpath/xpath.wsdl" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:mw="http://www.mobicware.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="urn:megaware:/mediate/qa/run/xpath/xpath/xpath.wsdl" xmlns:wsa="http://www.w3.org/2005/08/addressing">
+  <types>
+    <s:schema targetNamespace="urn:megaware:/mediate/qa/run/xpath/xpath/xpath.wsdl">
+      <s:element mw:isEncrypt="no" name="xpath">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="unbounded" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="item">
+              <s:complexType>
+                <s:sequence>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="count" type="s:string"/>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="concat" type="s:string"/>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="contains" type="s:string"/>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="normalize-space" type="s:string"/>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="index-of">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="sq_first" type="s:string"/>
+                        <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="sq_second" type="s:string"/>
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="remove">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="sq_first" type="s:string"/>
+                        <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="sq_second" type="s:string"/>
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="starts-with" type="s:string"/>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="string" type="s:string"/>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="string-length" type="s:string"/>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="substring" type="s:string"/>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="substring-after" type="s:string"/>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="substring-before" type="s:string"/>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="translate" type="s:string"/>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="ceiling" type="s:string"/>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="floor" type="s:string"/>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="number" type="s:string"/>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="round" type="s:string"/>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="sum" type="s:string"/>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="current-time" type="s:string"/>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="current-date" type="s:string"/>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </types>
+  <message name="receive1InputMessage">
+    <part element="tns:xpath" name="receive1Input"/>
+  </message>
+  <message name="receive1OutputMessage">
+    <part element="tns:xpath" name="receive1Output"/>
+  </message>
+  <portType name="xpathPortType">
+    <operation name="receive1">
+      <input message="tns:receive1InputMessage" name="receive1Input"/>
+      <output message="tns:receive1OutputMessage" name="receive1Output"/>
+    </operation>
+  </portType>
+  <binding name="xpathSOAP12Binding" type="tns:xpathPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive1">
+      <soap12:operation soapAction="/mediate/qa/run/xpath/xpath" style="document"/>
+      <input name="receive1Input">
+        <soap12:body use="literal"/>
+      </input>
+      <output name="receive1Output">
+        <soap12:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="xpathSOAP11Binding" type="tns:xpathPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive1">
+      <soap11:operation soapAction="/mediate/qa/run/xpath/xpath" style="document"/>
+      <input name="receive1Input">
+        <soap11:body use="literal"/>
+      </input>
+      <output name="receive1Output">
+        <soap11:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="xpathHTTPGETBinding" type="tns:xpathPortType">
+    <http:binding verb="GET"/>
+    <operation name="receive1">
+      <http:operation location="/xpath"/>
+      <input name="receive1Input">
+        <http:urlEncoded/>
+      </input>
+      <output name="receive1Output">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="xpathHTTPPOSTXMLBinding" type="tns:xpathPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive1">
+      <http:operation location="/xpath"/>
+      <input name="receive1Input">
+        <mime:content part="receive1Input" type="application/xml"/>
+      </input>
+      <output name="receive1Output">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="xpathHTTPPOSTFORMBinding" type="tns:xpathPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive1">
+      <http:operation location="/xpath"/>
+      <input name="receive1Input">
+        <mime:content part="receive1Input" type="application/x-www-form-urlencoded"/>
+      </input>
+      <output name="receive1Output">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="xpathHTTPPOSTJSONBinding" type="tns:xpathPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive1">
+      <http:operation location="/xpath"/>
+      <input name="receive1Input">
+        <mime:content part="receive1Input" type="application/json"/>
+      </input>
+      <output name="receive1Output">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="xpathService">
+    <port binding="tns:xpathSOAP12Binding" name="xpathSOAP12BindingPort">
+      <soap12:address location="http://192.168.0.130:57720/mediate/qa/run/xpath/xpath"/>
+    </port>
+    <port binding="tns:xpathSOAP11Binding" name="xpathSOAP11BindingPort">
+      <soap11:address location="http://192.168.0.130:57720/mediate/qa/run/xpath/xpath"/>
+    </port>
+    <port binding="tns:xpathHTTPGETBinding" name="xpathHTTPGETBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/xpath/xpath"/>
+    </port>
+    <port binding="tns:xpathHTTPPOSTXMLBinding" name="xpathHTTPPOSTXMLBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/xpath/xpath"/>
+    </port>
+    <port binding="tns:xpathHTTPPOSTFORMBinding" name="xpathHTTPPOSTFORMBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/xpath/xpath"/>
+    </port>
+    <port binding="tns:xpathHTTPPOSTJSONBinding" name="xpathHTTPPOSTJSONBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/xpath/xpath"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://192.168.0.130:57720/mediate/qa/run/xpath/xpath</con:endpoint></con:endpoints><con:operation id="7eef85e5-6e1a-4240-890c-22b852978a31" isOneWay="false" action="/mediate/qa/run/xpath/xpath" name="receive" bindingOperationName="receive1" type="Request-Response" outputName="receive1Output" inputName="receive1Input" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="28df4c55-713a-443a-aee6-26996726dc7e" name="xpath"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/xpath/xpath</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xpat="urn:megaware:/mediate/qa/run/xpath/xpath/xpath.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <xpat:xpath>\r
+         <!--1 or more repetitions:-->\r
+         <item>\r
+            <count></count>\r
+            <concat></concat>\r
+            <contains></contains>\r
+            <normalize-space></normalize-space>\r
+            <index-of>\r
+               <sq_first></sq_first>\r
+               <sq_second></sq_second>\r
+            </index-of>\r
+            <remove>\r
+               <sq_first></sq_first>\r
+               <sq_second></sq_second>\r
+            </remove>\r
+            <starts-with></starts-with>\r
+            <string></string>\r
+            <string-length></string-length>\r
+            <substring></substring>\r
+            <substring-after></substring-after>\r
+            <substring-before></substring-before>\r
+            <translate></translate>\r
+            <ceiling></ceiling>\r
+            <floor></floor>\r
+            <number></number>\r
+            <round></round>\r
+            <sum></sum>\r
+            <current-time></current-time>\r
+            <current-date></current-date>\r
+         </item>\r
+      </xpat:xpath>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/xpath/xpath/xpath.wsdl/xpathPortType/receive1Input"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="ad2e607b-499b-4be2-af9b-18dd7b7b9176" name="xpath TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="c9ef8d87-09ef-4ed2-8255-bb5dbfbc4c03" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="xpath TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="4aa85198-2765-4131-9671-6f793cbf3503" name="receive - xpath"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>xpath</con:interface><con:operation>receive</con:operation><con:request name="receive - xpath" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="e4ab96ad-d76c-467f-a543-d0c20cf98c29"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/xpath/xpath</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xpat="urn:megaware:/mediate/qa/run/xpath/xpath/xpath.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <xpat:xpath>\r
+         <!--1 or more repetitions:-->\r
+         <item>\r
+            <count></count>\r
+            <concat></concat>\r
+            <contains></contains>\r
+            <normalize-space></normalize-space>\r
+            <index-of>\r
+               <sq_first></sq_first>\r
+               <sq_second></sq_second>\r
+            </index-of>\r
+            <remove>\r
+               <sq_first></sq_first>\r
+               <sq_second></sq_second>\r
+            </remove>\r
+            <starts-with></starts-with>\r
+            <string></string>\r
+            <string-length></string-length>\r
+            <substring></substring>\r
+            <substring-after></substring-after>\r
+            <substring-before></substring-before>\r
+            <translate></translate>\r
+            <ceiling></ceiling>\r
+            <floor></floor>\r
+            <number></number>\r
+            <round></round>\r
+            <sum></sum>\r
+            <current-time></current-time>\r
+            <current-date></current-date>\r
+         </item>\r
+      </xpat:xpath>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="3fd6013f-b3ea-44c2-bfa3-1821fb98e66e" name="SOAP Response"/><con:assertion type="Simple Contains" id="7bc3ff56-2d74-4f85-9d70-ce09321b0239" name="count contains"><con:configuration><token>(?s).*&lt;count>1&lt;/count>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="7bc3ff56-2d74-4f85-9d70-ce09321b0239" name="concat contains"><con:configuration><token>(?s).*&lt;concat>XML IS FUN&lt;/concat>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="7bc3ff56-2d74-4f85-9d70-ce09321b0239" name="contains contains"><con:configuration><token>(?s).*&lt;contains>true&lt;/contains>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="7bc3ff56-2d74-4f85-9d70-ce09321b0239" name="normalize-space contains"><con:configuration><token>(?s).*&lt;normalize-space>ABC DEFG&lt;/normalize-space>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="7bc3ff56-2d74-4f85-9d70-ce09321b0239" name="index-of contains"><con:configuration><token><![CDATA[(?s).*<index-of>
+(?s)\s*<sq_first>2</sq_first>
+(?s)\s*<sq_second>4</sq_second>
+(?s)\s*</index-of>
+.*]]></token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="7bc3ff56-2d74-4f85-9d70-ce09321b0239" name="remove contains"><con:configuration><token><![CDATA[(?s).*<remove>
+(?s)\s*<sq_first>cd</sq_first>
+(?s)\s*<sq_second>ef</sq_second>
+(?s)\s*</remove>
+.*]]></token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="7bc3ff56-2d74-4f85-9d70-ce09321b0239" name="starts-with contains"><con:configuration><token>(?s).*&lt;starts-with>true&lt;/starts-with>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="7bc3ff56-2d74-4f85-9d70-ce09321b0239" name="string contains"><con:configuration><token>(?s).*&lt;string>314&lt;/string>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="7bc3ff56-2d74-4f85-9d70-ce09321b0239" name="string-length contains"><con:configuration><token>(?s).*&lt;string-length>8&lt;/string-length>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="7bc3ff56-2d74-4f85-9d70-ce09321b0239" name="substring contains"><con:configuration><token>(?s).*&lt;substring>mega&lt;/substring>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="7bc3ff56-2d74-4f85-9d70-ce09321b0239" name="substring-after contains"><con:configuration><token>(?s).*&lt;substring-after>10&lt;/substring-after>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="7bc3ff56-2d74-4f85-9d70-ce09321b0239" name="substring-before contains"><con:configuration><token>(?s).*&lt;substring-before>12&lt;/substring-before>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="7bc3ff56-2d74-4f85-9d70-ce09321b0239" name="translate contains"><con:configuration><token>(?s).*&lt;translate>12:45&lt;/translate>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="7bc3ff56-2d74-4f85-9d70-ce09321b0239" name="ceiling contains"><con:configuration><token>(?s).*&lt;ceiling>4&lt;/ceiling>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="7bc3ff56-2d74-4f85-9d70-ce09321b0239" name="floor contains"><con:configuration><token>(?s).*&lt;floor>3&lt;/floor>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="7bc3ff56-2d74-4f85-9d70-ce09321b0239" name="number contains"><con:configuration><token>(?s).*&lt;number>100&lt;/number>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="7bc3ff56-2d74-4f85-9d70-ce09321b0239" name="round contains"><con:configuration><token>(?s).*&lt;round>3&lt;/round>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="7bc3ff56-2d74-4f85-9d70-ce09321b0239" name="sum contains"><con:configuration><token>(?s).*&lt;sum>100&lt;/sum>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="7bc3ff56-2d74-4f85-9d70-ce09321b0239" name="current-time contains"><con:configuration><token>(?s).*&lt;current-time>[0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{3}.*&lt;/current-time>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="7bc3ff56-2d74-4f85-9d70-ce09321b0239" name="current-date contains"><con:configuration><token>(?s).*&lt;current-date>[0-9]{4}-[0-9]{2}-[0-9]{2}.*&lt;/current-date>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/xpath/xpath/xpath.wsdl/xpathPortType/receive1Input"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

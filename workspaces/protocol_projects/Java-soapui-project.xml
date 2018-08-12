@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="9c764fe0-9507-4f8f-995e-3e4cf5efaa54" activeEnvironment="Default" name="Java" resourceRoot="${projectDir}" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" defaultScriptLanguage="Groovy" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="66928476-f6d5-49bf-be2e-b32074b999af" wsaVersion="NONE" name="constructor" type="wsdl" bindingName="{urn:megaware:/mediate/qa/run/protocol/Java/constructor/constructor.wsdl}constructorSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="http://${basicAddress}/mediate/qa/run/protocol/Java/constructor?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://192.168.0.130:57720/mediate/qa/run/protocol/Java/constructor?WSDL"><con:part><con:url>http://192.168.0.130:57720/mediate/qa/run/protocol/Java/constructor?WSDL</con:url><con:content><![CDATA[<definitions targetNamespace="urn:megaware:/mediate/qa/run/protocol/Java/constructor/constructor.wsdl" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:mw="http://www.mobicware.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="urn:megaware:/mediate/qa/run/protocol/Java/constructor/constructor.wsdl" xmlns:wsa="http://www.w3.org/2005/08/addressing">
+  <types>
+    <s:schema targetNamespace="urn:megaware:/mediate/qa/run/protocol/Java/constructor/constructor.wsdl">
+      <s:element mw:isEncrypt="no" name="req">
+        <s:complexType>
+          <s:sequence>
+            <s:element default="constructor" maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="value" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element mw:isEncrypt="no" name="response" type="s:string"/>
+    </s:schema>
+  </types>
+  <message name="receiveInputMessage">
+    <part element="tns:req" name="receiveInput"/>
+  </message>
+  <message name="receiveOutputMessage">
+    <part element="tns:response" name="receiveOutput"/>
+  </message>
+  <portType name="constructorPortType">
+    <operation name="receive">
+      <input message="tns:receiveInputMessage" name="receiveInput"/>
+      <output message="tns:receiveOutputMessage" name="receiveOutput"/>
+    </operation>
+  </portType>
+  <binding name="constructorSOAP12Binding" type="tns:constructorPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive">
+      <soap12:operation soapAction="/mediate/qa/run/protocol/Java/constructor" style="document"/>
+      <input name="receiveInput">
+        <soap12:body use="literal"/>
+      </input>
+      <output name="receiveOutput">
+        <soap12:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="constructorSOAP11Binding" type="tns:constructorPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive">
+      <soap11:operation soapAction="/mediate/qa/run/protocol/Java/constructor" style="document"/>
+      <input name="receiveInput">
+        <soap11:body use="literal"/>
+      </input>
+      <output name="receiveOutput">
+        <soap11:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="constructorHTTPGETBinding" type="tns:constructorPortType">
+    <http:binding verb="GET"/>
+    <operation name="receive">
+      <http:operation location="/req"/>
+      <input name="receiveInput">
+        <http:urlEncoded/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="constructorHTTPPOSTXMLBinding" type="tns:constructorPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/req"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/xml"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="constructorHTTPPOSTFORMBinding" type="tns:constructorPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/req"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/x-www-form-urlencoded"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="constructorHTTPPOSTJSONBinding" type="tns:constructorPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/req"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/json"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="constructorService">
+    <port binding="tns:constructorSOAP12Binding" name="constructorSOAP12BindingPort">
+      <soap12:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Java/constructor"/>
+    </port>
+    <port binding="tns:constructorSOAP11Binding" name="constructorSOAP11BindingPort">
+      <soap11:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Java/constructor"/>
+    </port>
+    <port binding="tns:constructorHTTPGETBinding" name="constructorHTTPGETBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Java/constructor"/>
+    </port>
+    <port binding="tns:constructorHTTPPOSTXMLBinding" name="constructorHTTPPOSTXMLBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Java/constructor"/>
+    </port>
+    <port binding="tns:constructorHTTPPOSTFORMBinding" name="constructorHTTPPOSTFORMBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Java/constructor"/>
+    </port>
+    <port binding="tns:constructorHTTPPOSTJSONBinding" name="constructorHTTPPOSTJSONBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Java/constructor"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://192.168.0.130:57720/mediate/qa/run/protocol/Java/constructor</con:endpoint><con:endpoint>http://DESKTOP-M20ULLI:8088/mockconstructor</con:endpoint></con:endpoints><con:operation id="a7e6f35a-0c1a-4e0a-906a-b02f1fe40eba" isOneWay="false" action="/mediate/qa/run/protocol/Java/constructor" name="receive" bindingOperationName="receive" type="Request-Response" outputName="receiveOutput" inputName="receiveInput" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="044c67c4-ce41-4619-ae16-a307a2aae87d" name="constructor"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/protocol/Java/constructor</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:con="urn:megaware:/mediate/qa/run/protocol/Java/constructor/constructor.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <con:req>\r
+         <value>constructor</value>\r
+      </con:req>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/protocol/Java/constructor/constructor.wsdl/constructorPortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="c66ca4c0-9291-4bf1-a4e1-5ffee002459b" wsaVersion="NONE" name="instance" type="wsdl" bindingName="{urn:megaware:/mediate/qa/run/protocol/Java/instance/instance.wsdl}instanceSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="http://${basicAddress}/mediate/qa/run/protocol/Java/instance?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://192.168.0.130:57720/mediate/qa/run/protocol/Java/instance?WSDL"><con:part><con:url>http://192.168.0.130:57720/mediate/qa/run/protocol/Java/instance?WSDL</con:url><con:content><![CDATA[<definitions targetNamespace="urn:megaware:/mediate/qa/run/protocol/Java/instance/instance.wsdl" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:mw="http://www.mobicware.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="urn:megaware:/mediate/qa/run/protocol/Java/instance/instance.wsdl" xmlns:wsa="http://www.w3.org/2005/08/addressing">
+  <types>
+    <s:schema targetNamespace="urn:megaware:/mediate/qa/run/protocol/Java/instance/instance.wsdl">
+      <s:element mw:isEncrypt="no" name="req">
+        <s:complexType>
+          <s:sequence>
+            <s:element default="instance" maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="value" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element mw:isEncrypt="no" name="response" type="s:string"/>
+    </s:schema>
+  </types>
+  <message name="receiveInputMessage">
+    <part element="tns:req" name="receiveInput"/>
+  </message>
+  <message name="receiveOutputMessage">
+    <part element="tns:response" name="receiveOutput"/>
+  </message>
+  <portType name="instancePortType">
+    <operation name="receive">
+      <input message="tns:receiveInputMessage" name="receiveInput"/>
+      <output message="tns:receiveOutputMessage" name="receiveOutput"/>
+    </operation>
+  </portType>
+  <binding name="instanceSOAP12Binding" type="tns:instancePortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive">
+      <soap12:operation soapAction="/mediate/qa/run/protocol/Java/instance" style="document"/>
+      <input name="receiveInput">
+        <soap12:body use="literal"/>
+      </input>
+      <output name="receiveOutput">
+        <soap12:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="instanceSOAP11Binding" type="tns:instancePortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive">
+      <soap11:operation soapAction="/mediate/qa/run/protocol/Java/instance" style="document"/>
+      <input name="receiveInput">
+        <soap11:body use="literal"/>
+      </input>
+      <output name="receiveOutput">
+        <soap11:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="instanceHTTPGETBinding" type="tns:instancePortType">
+    <http:binding verb="GET"/>
+    <operation name="receive">
+      <http:operation location="/req"/>
+      <input name="receiveInput">
+        <http:urlEncoded/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="instanceHTTPPOSTXMLBinding" type="tns:instancePortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/req"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/xml"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="instanceHTTPPOSTFORMBinding" type="tns:instancePortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/req"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/x-www-form-urlencoded"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="instanceHTTPPOSTJSONBinding" type="tns:instancePortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/req"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/json"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="instanceService">
+    <port binding="tns:instanceSOAP12Binding" name="instanceSOAP12BindingPort">
+      <soap12:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Java/instance"/>
+    </port>
+    <port binding="tns:instanceSOAP11Binding" name="instanceSOAP11BindingPort">
+      <soap11:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Java/instance"/>
+    </port>
+    <port binding="tns:instanceHTTPGETBinding" name="instanceHTTPGETBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Java/instance"/>
+    </port>
+    <port binding="tns:instanceHTTPPOSTXMLBinding" name="instanceHTTPPOSTXMLBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Java/instance"/>
+    </port>
+    <port binding="tns:instanceHTTPPOSTFORMBinding" name="instanceHTTPPOSTFORMBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Java/instance"/>
+    </port>
+    <port binding="tns:instanceHTTPPOSTJSONBinding" name="instanceHTTPPOSTJSONBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Java/instance"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://192.168.0.130:57720/mediate/qa/run/protocol/Java/instance</con:endpoint></con:endpoints><con:operation id="56edeb51-cbf6-43fd-a6df-b7137d97109b" isOneWay="false" action="/mediate/qa/run/protocol/Java/instance" name="receive" bindingOperationName="receive" type="Request-Response" outputName="receiveOutput" inputName="receiveInput" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b9f7595d-a08d-4ed4-8347-12cfe377366c" name="instance"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/protocol/Java/instance</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ins="urn:megaware:/mediate/qa/run/protocol/Java/instance/instance.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <ins:req>\r
+         <value>instance</value>\r
+      </ins:req>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/protocol/Java/instance/instance.wsdl/instancePortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="0685dbab-6083-4308-83fb-28041bf246a7" wsaVersion="NONE" name="static" type="wsdl" bindingName="{urn:megaware:/mediate/qa/run/protocol/Java/static/static.wsdl}staticSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="http://${basicAddress}/mediate/qa/run/protocol/Java/static?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://127.0.0.1:57720/mediate/qa/run/protocol/Java/static?WSDL"><con:part><con:url>http://127.0.0.1:57720/mediate/qa/run/protocol/Java/static?WSDL</con:url><con:content><![CDATA[<definitions targetNamespace="urn:megaware:/mediate/qa/run/protocol/Java/static/static.wsdl" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:mw="http://www.mobicware.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="urn:megaware:/mediate/qa/run/protocol/Java/static/static.wsdl" xmlns:wsa="http://www.w3.org/2005/08/addressing">
+  <types>
+    <s:schema targetNamespace="urn:megaware:/mediate/qa/run/protocol/Java/static/static.wsdl">
+      <s:element mw:isEncrypt="no" name="req">
+        <s:complexType>
+          <s:sequence>
+            <s:element default="static" maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="value" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element mw:isEncrypt="no" name="response">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="static" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </types>
+  <message name="receiveInputMessage">
+    <part element="tns:req" name="receiveInput"/>
+  </message>
+  <message name="receiveOutputMessage">
+    <part element="tns:response" name="receiveOutput"/>
+  </message>
+  <portType name="staticPortType">
+    <operation name="receive">
+      <input message="tns:receiveInputMessage" name="receiveInput"/>
+      <output message="tns:receiveOutputMessage" name="receiveOutput"/>
+    </operation>
+  </portType>
+  <binding name="staticSOAP12Binding" type="tns:staticPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive">
+      <soap12:operation soapAction="/mediate/qa/run/protocol/Java/static" style="document"/>
+      <input name="receiveInput">
+        <soap12:body use="literal"/>
+      </input>
+      <output name="receiveOutput">
+        <soap12:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="staticSOAP11Binding" type="tns:staticPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive">
+      <soap11:operation soapAction="/mediate/qa/run/protocol/Java/static" style="document"/>
+      <input name="receiveInput">
+        <soap11:body use="literal"/>
+      </input>
+      <output name="receiveOutput">
+        <soap11:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="staticHTTPGETBinding" type="tns:staticPortType">
+    <http:binding verb="GET"/>
+    <operation name="receive">
+      <http:operation location="/req"/>
+      <input name="receiveInput">
+        <http:urlEncoded/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="staticHTTPPOSTXMLBinding" type="tns:staticPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/req"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/xml"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="staticHTTPPOSTFORMBinding" type="tns:staticPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/req"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/x-www-form-urlencoded"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="staticHTTPPOSTJSONBinding" type="tns:staticPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/req"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/json"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="staticService">
+    <port binding="tns:staticSOAP12Binding" name="staticSOAP12BindingPort">
+      <soap12:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Java/static"/>
+    </port>
+    <port binding="tns:staticSOAP11Binding" name="staticSOAP11BindingPort">
+      <soap11:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Java/static"/>
+    </port>
+    <port binding="tns:staticHTTPGETBinding" name="staticHTTPGETBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Java/static"/>
+    </port>
+    <port binding="tns:staticHTTPPOSTXMLBinding" name="staticHTTPPOSTXMLBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Java/static"/>
+    </port>
+    <port binding="tns:staticHTTPPOSTFORMBinding" name="staticHTTPPOSTFORMBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Java/static"/>
+    </port>
+    <port binding="tns:staticHTTPPOSTJSONBinding" name="staticHTTPPOSTJSONBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Java/static"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://192.168.0.130:57720/mediate/qa/run/protocol/Java/static</con:endpoint></con:endpoints><con:operation id="9083be13-0066-49c2-9b6d-5416d12fcdbf" isOneWay="false" action="/mediate/qa/run/protocol/Java/static" name="receive" bindingOperationName="receive" type="Request-Response" outputName="receiveOutput" inputName="receiveInput" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="227a3d34-3c2e-47dd-a2c8-72fa1233d9df" name="static"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/protocol/Java/static</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:stat="urn:megaware:/mediate/qa/run/protocol/Java/static/static.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <stat:req>\r
+         <value>static</value>\r
+      </stat:req>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/protocol/Java/static/static.wsdl/staticPortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="5f1afa62-f36e-4377-98c7-28cabcead033" name="JavaTestSuite"><con:description>	</con:description><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="21c3bb89-ea9d-4833-8bea-6b0d68ab09b5" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="BasicTest" searchProperties="true"><con:settings/><con:testStep type="request" id="da19fe45-6350-4355-bca9-356b2d9eca52" name="receive - static"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>static</con:interface><con:operation>receive</con:operation><con:request name="receive - static" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="f1dcec07-2ffb-422d-82ea-e78213c2617a"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/protocol/Java/static</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:stat="urn:megaware:/mediate/qa/run/protocol/Java/static/static.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <stat:req>\r
+         <value>static</value>\r
+      </stat:req>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="a2c0b515-2fac-4025-866f-94ec1bd9cfe1" name="SOAP Response"/><con:assertion type="Simple Contains" id="e53e8ec9-7463-4d34-b640-e0638a07978c" name="Contains"><con:configuration><token>(?s)&lt;(.*:)?response.*>.*&lt;static>static&lt;/static>.*&lt;/(.*:)?response.*></token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/protocol/Java/static/static.wsdl/staticPortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="9a16e877-6831-42d4-aa72-9ad50b401f53" name="receive - instance"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>instance</con:interface><con:operation>receive</con:operation><con:request name="receive - instance" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="e567452e-efe2-497d-a251-3a35a2d243e9"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/protocol/Java/instance</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ins="urn:megaware:/mediate/qa/run/protocol/Java/instance/instance.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <ins:req>\r
+         <value>instance</value>\r
+      </ins:req>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="b9deaa4b-6949-412e-a2d8-e6b2fa9c494d" name="SOAP Response"/><con:assertion type="Simple Contains" id="2779ee69-7f8d-49d7-aecd-05f7885f109d" name="Contains"><con:configuration><token>(?s)&lt;(.*:)?response.*>.*&lt;instance>instance&lt;/instance>.*&lt;/(.*:)?response.*></token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/protocol/Java/instance/instance.wsdl/instancePortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="85e06090-2745-436e-ad08-325c4bb1679f" name="receive - constructor"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>constructor</con:interface><con:operation>receive</con:operation><con:request name="receive - constructor" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="3b32b6ea-a812-4913-bc76-43c430da3f26"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/protocol/Java/constructor</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:con="urn:megaware:/mediate/qa/run/protocol/Java/constructor/constructor.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <con:req>\r
+         <value>constructor</value>\r
+      </con:req>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="0ac7acdc-c3e4-4f45-995b-c8f6318aad38" name="SOAP Response"/><con:assertion type="Simple Contains" id="e61c326f-5981-46c2-8c22-51375f62feea" name="Contains"><con:configuration><token>(?s)&lt;(.*:)?response.*>.*&lt;instance>constructor&lt;/instance>.*&lt;/(.*:)?response.*></token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/protocol/Java/constructor/constructor.wsdl/constructorPortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

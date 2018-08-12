@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="986fa3ea-2994-40a0-b8e7-4cb8d4fb0b12" activeEnvironment="Default" name="AssignFunctions" resourceRoot="${projectDir}" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="7e8b8716-275f-44d7-9587-bbc4489a004e" wsaVersion="NONE" name="assignFunctions" type="wsdl" bindingName="{urn:megaware:/mediate/qa/run/function/AssignFunctionsTest/AssignFunctionsTest.wsdl}AssignFunctionsTestSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="http://${basicAddress}/mediate/qa/run/function/AssignFunctionsTest?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://192.168.0.130:57720/mediate/qa/run/function/AssignFunctionsTest?WSDL"><con:part><con:url>http://192.168.0.130:57720/mediate/qa/run/function/AssignFunctionsTest?WSDL</con:url><con:content><![CDATA[<definitions targetNamespace="urn:megaware:/mediate/qa/run/function/AssignFunctionsTest/AssignFunctionsTest.wsdl" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:mw="http://www.mobicware.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="urn:megaware:/mediate/qa/run/function/AssignFunctionsTest/AssignFunctionsTest.wsdl" xmlns:wsa="http://www.w3.org/2005/08/addressing">
+  <types>
+    <s:schema targetNamespace="urn:megaware:/mediate/qa/run/function/AssignFunctionsTest/AssignFunctionsTest.wsdl">
+      <s:element mw:isEncrypt="no" name="req">
+        <s:complexType>
+          <s:sequence>
+            <s:element default="eval" maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="evalValue" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element mw:isEncrypt="no" name="res">
+        <s:complexType>
+          <s:sequence>
+            <s:element default="doesn`t have" maxOccurs="1" minOccurs="0" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="mw_hasVariable" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="mw_sessionproperty" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="mw_remove" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="mw_eval" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="0" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="mw_currentdate" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </types>
+  <message name="receiveInputMessage">
+    <part element="tns:req" name="receiveInput"/>
+  </message>
+  <message name="receiveOutputMessage">
+    <part element="tns:res" name="receiveOutput"/>
+  </message>
+  <portType name="AssignFunctionsTestPortType">
+    <operation name="receive">
+      <input message="tns:receiveInputMessage" name="receiveInput"/>
+      <output message="tns:receiveOutputMessage" name="receiveOutput"/>
+    </operation>
+  </portType>
+  <binding name="AssignFunctionsTestSOAP12Binding" type="tns:AssignFunctionsTestPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive">
+      <soap12:operation soapAction="/mediate/qa/run/function/AssignFunctionsTest" style="document"/>
+      <input name="receiveInput">
+        <soap12:body use="literal"/>
+      </input>
+      <output name="receiveOutput">
+        <soap12:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="AssignFunctionsTestSOAP11Binding" type="tns:AssignFunctionsTestPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive">
+      <soap11:operation soapAction="/mediate/qa/run/function/AssignFunctionsTest" style="document"/>
+      <input name="receiveInput">
+        <soap11:body use="literal"/>
+      </input>
+      <output name="receiveOutput">
+        <soap11:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="AssignFunctionsTestHTTPGETBinding" type="tns:AssignFunctionsTestPortType">
+    <http:binding verb="GET"/>
+    <operation name="receive">
+      <http:operation location="/req"/>
+      <input name="receiveInput">
+        <http:urlEncoded/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="AssignFunctionsTestHTTPPOSTXMLBinding" type="tns:AssignFunctionsTestPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/req"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/xml"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="AssignFunctionsTestHTTPPOSTFORMBinding" type="tns:AssignFunctionsTestPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/req"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/x-www-form-urlencoded"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="AssignFunctionsTestHTTPPOSTJSONBinding" type="tns:AssignFunctionsTestPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/req"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/json"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="AssignFunctionsTestService">
+    <port binding="tns:AssignFunctionsTestSOAP12Binding" name="AssignFunctionsTestSOAP12BindingPort">
+      <soap12:address location="http://192.168.0.130:57720/mediate/qa/run/function/AssignFunctionsTest"/>
+    </port>
+    <port binding="tns:AssignFunctionsTestSOAP11Binding" name="AssignFunctionsTestSOAP11BindingPort">
+      <soap11:address location="http://192.168.0.130:57720/mediate/qa/run/function/AssignFunctionsTest"/>
+    </port>
+    <port binding="tns:AssignFunctionsTestHTTPGETBinding" name="AssignFunctionsTestHTTPGETBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/function/AssignFunctionsTest"/>
+    </port>
+    <port binding="tns:AssignFunctionsTestHTTPPOSTXMLBinding" name="AssignFunctionsTestHTTPPOSTXMLBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/function/AssignFunctionsTest"/>
+    </port>
+    <port binding="tns:AssignFunctionsTestHTTPPOSTFORMBinding" name="AssignFunctionsTestHTTPPOSTFORMBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/function/AssignFunctionsTest"/>
+    </port>
+    <port binding="tns:AssignFunctionsTestHTTPPOSTJSONBinding" name="AssignFunctionsTestHTTPPOSTJSONBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/function/AssignFunctionsTest"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://192.168.0.130:57720/mediate/qa/run/function/AssignFunctionsTest</con:endpoint></con:endpoints><con:operation id="140460a2-29f2-4427-bab4-b71c893cb898" isOneWay="false" action="/mediate/qa/run/function/AssignFunctionsTest" name="receive" bindingOperationName="receive" type="Request-Response" outputName="receiveOutput" inputName="receiveInput" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1acb4ec3-8340-4d73-a3a1-2ada3c521098" name="assignFunctions"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/function/AssignFunctionsTest</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ass="urn:megaware:/mediate/qa/run/function/AssignFunctionsTest/AssignFunctionsTest.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <ass:req>\r
+         <evalValue>eval</evalValue>\r
+      </ass:req>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/function/AssignFunctionsTest/AssignFunctionsTest.wsdl/AssignFunctionsTestPortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="bb8ba161-f040-4c6c-aed8-bf65159f79fa" wsaVersion="NONE" name="mw_hasVariable" type="wsdl" bindingName="{urn:megaware:/mediate/qa/run/function/Assign/mw_hasVariable/mw_hasVariable.wsdl}mw_hasVariableSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="http://${basicAddress}/mediate/qa/run/function/Assign/mw_hasVariable?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://192.168.0.54:57720/mediate/qa/run/function/Assign/mw_hasVariable?WSDL"><con:part><con:url>http://192.168.0.54:57720/mediate/qa/run/function/Assign/mw_hasVariable?WSDL</con:url><con:content><![CDATA[<definitions targetNamespace="urn:megaware:/mediate/qa/run/function/Assign/mw_hasVariable/mw_hasVariable.wsdl" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:mw="http://www.mobicware.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="urn:megaware:/mediate/qa/run/function/Assign/mw_hasVariable/mw_hasVariable.wsdl" xmlns:wsa="http://www.w3.org/2005/08/addressing">
+  <types>
+    <s:schema targetNamespace="urn:megaware:/mediate/qa/run/function/Assign/mw_hasVariable/mw_hasVariable.wsdl">
+      <s:element mw:isEncrypt="no" name="request" xmlns:mw="http://www/mobicware.com">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="value" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element mw:isEncrypt="no" name="response" xmlns:mw="http://www/mobicware.com">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="result" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </types>
+  <message name="receiveInputMessage">
+    <part element="tns:request" name="receiveInput"/>
+  </message>
+  <message name="receiveOutputMessage">
+    <part element="tns:response" name="receiveOutput"/>
+  </message>
+  <portType name="mw_hasVariablePortType">
+    <operation name="receive">
+      <input message="tns:receiveInputMessage" name="receiveInput"/>
+      <output message="tns:receiveOutputMessage" name="receiveOutput"/>
+    </operation>
+  </portType>
+  <binding name="mw_hasVariableSOAP12Binding" type="tns:mw_hasVariablePortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive">
+      <soap12:operation soapAction="/mediate/qa/run/function/Assign/mw_hasVariable" style="document"/>
+      <input name="receiveInput">
+        <soap12:body use="literal"/>
+      </input>
+      <output name="receiveOutput">
+        <soap12:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="mw_hasVariableSOAP11Binding" type="tns:mw_hasVariablePortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive">
+      <soap11:operation soapAction="/mediate/qa/run/function/Assign/mw_hasVariable" style="document"/>
+      <input name="receiveInput">
+        <soap11:body use="literal"/>
+      </input>
+      <output name="receiveOutput">
+        <soap11:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="mw_hasVariableHTTPGETBinding" type="tns:mw_hasVariablePortType">
+    <http:binding verb="GET"/>
+    <operation name="receive">
+      <http:operation location="/request"/>
+      <input name="receiveInput">
+        <http:urlEncoded/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="mw_hasVariableHTTPPOSTXMLBinding" type="tns:mw_hasVariablePortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/request"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/xml"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="mw_hasVariableHTTPPOSTFORMBinding" type="tns:mw_hasVariablePortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/request"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/x-www-form-urlencoded"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="mw_hasVariableHTTPPOSTJSONBinding" type="tns:mw_hasVariablePortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/request"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/json"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="mw_hasVariableService">
+    <port binding="tns:mw_hasVariableSOAP12Binding" name="mw_hasVariableSOAP12BindingPort">
+      <soap12:address location="http://192.168.0.54:57720/mediate/qa/run/function/Assign/mw_hasVariable"/>
+    </port>
+    <port binding="tns:mw_hasVariableSOAP11Binding" name="mw_hasVariableSOAP11BindingPort">
+      <soap11:address location="http://192.168.0.54:57720/mediate/qa/run/function/Assign/mw_hasVariable"/>
+    </port>
+    <port binding="tns:mw_hasVariableHTTPGETBinding" name="mw_hasVariableHTTPGETBindingPort">
+      <http:address location="http://192.168.0.54:57720/mediate/qa/run/function/Assign/mw_hasVariable"/>
+    </port>
+    <port binding="tns:mw_hasVariableHTTPPOSTXMLBinding" name="mw_hasVariableHTTPPOSTXMLBindingPort">
+      <http:address location="http://192.168.0.54:57720/mediate/qa/run/function/Assign/mw_hasVariable"/>
+    </port>
+    <port binding="tns:mw_hasVariableHTTPPOSTFORMBinding" name="mw_hasVariableHTTPPOSTFORMBindingPort">
+      <http:address location="http://192.168.0.54:57720/mediate/qa/run/function/Assign/mw_hasVariable"/>
+    </port>
+    <port binding="tns:mw_hasVariableHTTPPOSTJSONBinding" name="mw_hasVariableHTTPPOSTJSONBindingPort">
+      <http:address location="http://192.168.0.54:57720/mediate/qa/run/function/Assign/mw_hasVariable"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://192.168.0.54:57720/mediate/qa/run/function/Assign/mw_hasVariable</con:endpoint></con:endpoints><con:operation id="b4850804-6586-404b-ae53-bad5e6f36a63" isOneWay="false" action="/mediate/qa/run/function/Assign/mw_hasVariable" name="receive" bindingOperationName="receive" type="Request-Response" outputName="receiveOutput" inputName="receiveInput" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="21e21c60-4f25-41dd-8235-e57b3e823445" name="mw_hasVariable"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/function/Assign/mw_hasVariable</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:mw="urn:megaware:/mediate/qa/run/function/Assign/mw_hasVariable/mw_hasVariable.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <mw:request>\r
+         <value>work</value>\r
+      </mw:request>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/function/Assign/mw_hasVariable/mw_hasVariable.wsdl/mw_hasVariablePortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="3e3422af-8267-4efd-a376-b5366b3fdaf7" wsaVersion="NONE" name="mw_hasAttachment" type="wsdl" bindingName="{urn:megaware:/mediate/qa/run/function/Assign/mw_hasAttachment/mw_hasAttachment.wsdl}mw_hasAttachmentSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="http://${basicAddress}/mediate/qa/run/function/Assign/mw_hasAttachment?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://192.168.0.54:57720/mediate/qa/run/function/Assign/mw_hasAttachment?WSDL"><con:part><con:url>http://192.168.0.54:57720/mediate/qa/run/function/Assign/mw_hasAttachment?WSDL</con:url><con:content><![CDATA[<definitions targetNamespace="urn:megaware:/mediate/qa/run/function/Assign/mw_hasAttachment/mw_hasAttachment.wsdl" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:mw="http://www.mobicware.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="urn:megaware:/mediate/qa/run/function/Assign/mw_hasAttachment/mw_hasAttachment.wsdl" xmlns:wsa="http://www.w3.org/2005/08/addressing">
+  <types>
+    <s:schema targetNamespace="urn:megaware:/mediate/qa/run/function/Assign/mw_hasAttachment/mw_hasAttachment.wsdl">
+      <s:element mw:isEncrypt="no" name="request" xmlns:mw="http://www/mobicware.com">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="value" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element mw:isEncrypt="no" name="response" xmlns:mw="http://www/mobicware.com">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="result" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </types>
+  <message name="receiveInputMessage">
+    <part element="tns:request" name="receiveInput"/>
+  </message>
+  <message name="receiveOutputMessage">
+    <part element="tns:response" name="receiveOutput"/>
+  </message>
+  <portType name="mw_hasAttachmentPortType">
+    <operation name="receive">
+      <input message="tns:receiveInputMessage" name="receiveInput"/>
+      <output message="tns:receiveOutputMessage" name="receiveOutput"/>
+    </operation>
+  </portType>
+  <binding name="mw_hasAttachmentSOAP12Binding" type="tns:mw_hasAttachmentPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive">
+      <soap12:operation soapAction="/mediate/qa/run/function/Assign/mw_hasAttachment" style="document"/>
+      <input name="receiveInput">
+        <soap12:body use="literal"/>
+      </input>
+      <output name="receiveOutput">
+        <soap12:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="mw_hasAttachmentSOAP11Binding" type="tns:mw_hasAttachmentPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive">
+      <soap11:operation soapAction="/mediate/qa/run/function/Assign/mw_hasAttachment" style="document"/>
+      <input name="receiveInput">
+        <soap11:body use="literal"/>
+      </input>
+      <output name="receiveOutput">
+        <soap11:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="mw_hasAttachmentHTTPGETBinding" type="tns:mw_hasAttachmentPortType">
+    <http:binding verb="GET"/>
+    <operation name="receive">
+      <http:operation location="/request"/>
+      <input name="receiveInput">
+        <http:urlEncoded/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="mw_hasAttachmentHTTPPOSTXMLBinding" type="tns:mw_hasAttachmentPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/request"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/xml"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="mw_hasAttachmentHTTPPOSTFORMBinding" type="tns:mw_hasAttachmentPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/request"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/x-www-form-urlencoded"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="mw_hasAttachmentHTTPPOSTJSONBinding" type="tns:mw_hasAttachmentPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/request"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/json"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="mw_hasAttachmentService">
+    <port binding="tns:mw_hasAttachmentSOAP12Binding" name="mw_hasAttachmentSOAP12BindingPort">
+      <soap12:address location="http://192.168.0.54:57720/mediate/qa/run/function/Assign/mw_hasAttachment"/>
+    </port>
+    <port binding="tns:mw_hasAttachmentSOAP11Binding" name="mw_hasAttachmentSOAP11BindingPort">
+      <soap11:address location="http://192.168.0.54:57720/mediate/qa/run/function/Assign/mw_hasAttachment"/>
+    </port>
+    <port binding="tns:mw_hasAttachmentHTTPGETBinding" name="mw_hasAttachmentHTTPGETBindingPort">
+      <http:address location="http://192.168.0.54:57720/mediate/qa/run/function/Assign/mw_hasAttachment"/>
+    </port>
+    <port binding="tns:mw_hasAttachmentHTTPPOSTXMLBinding" name="mw_hasAttachmentHTTPPOSTXMLBindingPort">
+      <http:address location="http://192.168.0.54:57720/mediate/qa/run/function/Assign/mw_hasAttachment"/>
+    </port>
+    <port binding="tns:mw_hasAttachmentHTTPPOSTFORMBinding" name="mw_hasAttachmentHTTPPOSTFORMBindingPort">
+      <http:address location="http://192.168.0.54:57720/mediate/qa/run/function/Assign/mw_hasAttachment"/>
+    </port>
+    <port binding="tns:mw_hasAttachmentHTTPPOSTJSONBinding" name="mw_hasAttachmentHTTPPOSTJSONBindingPort">
+      <http:address location="http://192.168.0.54:57720/mediate/qa/run/function/Assign/mw_hasAttachment"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://192.168.0.54:57720/mediate/qa/run/function/Assign/mw_hasAttachment</con:endpoint></con:endpoints><con:operation id="e53ef8a1-fdaa-4ff8-b2c4-a7d5ad480f96" isOneWay="false" action="/mediate/qa/run/function/Assign/mw_hasAttachment" name="receive" bindingOperationName="receive" type="Request-Response" outputName="receiveOutput" inputName="receiveInput" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7b6bd985-26a3-41b0-952c-aa89b867d076" name="mw_hasAttachment"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/function/Assign/mw_hasAttachment</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:mw="urn:megaware:/mediate/qa/run/function/Assign/mw_hasAttachment/mw_hasAttachment.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <mw:request>\r
+         <value></value>\r
+      </mw:request>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:attachment><con:name>attachment.xml</con:name><con:contentType>text/xml</con:contentType><con:size>232</con:size><con:contentId>attachment.xml</con:contentId><con:data>UEsDBBQACAgIACOICE0AAAAAAAAAAAAAAAAOAAAAYXR0YWNobWVudC54bWyzCXGMUKjIzckrtlUqLcqzyk1NTyxPLEq10i/OzC3NSSxJ1S8vyoSReuXFKTlKdrxcnDZAXi6IwWnj5+jravdqZ8Obrp1vZ7TY6IP5YJmgIB87QyNjE1MzXQhlbqMPEgNLAi02MLSztLTRh7DggkZ2lhYQQSOIoKOLS5Czi52pibGRoY0+lAdTHuAYaadramCgUJ6fB9YFEgA5UB/qQrCgHQBQSwcIm2yBr6IAAADoAAAAUEsBAhQAFAAICAgAI4gITZtsga+iAAAA6AAAAA4AAAAAAAAAAAAAAAAAAAAAAGF0dGFjaG1lbnQueG1sUEsFBgAAAAABAAEAPAAAAN4AAAAAAA==</con:data><con:id>10fffa98-6d96-4227-88fb-f353c8b3815b</con:id></con:attachment><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/function/Assign/mw_hasAttachment/mw_hasAttachment.wsdl/mw_hasAttachmentPortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="85a7c890-fe56-4022-8790-56c88bff07d0" name="assignFunctions TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="fa8963cc-0307-4273-a9d2-ea1e040cb9f0" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="assignFunctions TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="366eb16d-3eff-4ece-b9eb-359d16590aaa" name="receive - assignFunctions"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>assignFunctions</con:interface><con:operation>receive</con:operation><con:request name="receive - assignFunctions" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="3e42fbbc-f7b5-40a6-8860-c08cd0281483"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/function/AssignFunctionsTest</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ass="urn:megaware:/mediate/qa/run/function/AssignFunctionsTest/AssignFunctionsTest.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <ass:req>\r
+         <evalValue>eval</evalValue>\r
+      </ass:req>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:assertion type="Simple Contains" id="4ae602bd-6913-4b93-b77f-ed68eb75e024" name="mw_sessionproperty contains"><con:configuration><token>(?s).*&lt;mw_sessionproperty>exampleData&lt;/mw_sessionproperty>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="4ae602bd-6913-4b93-b77f-ed68eb75e024" name="mw_eval contains"><con:configuration><token>(?s).*&lt;mw_eval>eval&lt;/mw_eval>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="4ae602bd-6913-4b93-b77f-ed68eb75e024" name="mw_currentdate contains"><con:configuration><token>(?s).*&lt;mw_currentdate>[0-9]{4}-[0-9]{2}-[0-9]{2}\s[0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{3}&lt;/mw_currentdate>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="XPath Match" id="06fbaff4-1aaa-45c8-b4ea-969987f44878" name="mw_append exists"><con:configuration><path>exists(//mw_append)</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="06fbaff4-1aaa-45c8-b4ea-969987f44878" name="mw_remove not exists"><con:configuration><path>not(exists(//mw_remove))</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/function/AssignFunctionsTest/AssignFunctionsTest.wsdl/AssignFunctionsTestPortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="327f1ce5-3fdb-4b25-8d3e-d1470bca2b88" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="mw_hasAttachment TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="ef4ba48a-4c05-41ed-9f09-5eff52c33490" name="receive - mw_hasAttachment with attachment"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>mw_hasAttachment</con:interface><con:operation>receive</con:operation><con:request name="receive - mw_hasAttachment with attachment" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="d5e469ea-022b-4fff-9a65-38f65d9f093a"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/function/Assign/mw_hasAttachment</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:mw="urn:megaware:/mediate/qa/run/function/Assign/mw_hasAttachment/mw_hasAttachment.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <mw:request>\r
+         <value></value>\r
+      </mw:request>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="0e7a47bf-641c-4e6b-8c28-1ae7bb8048f5" name="SOAP Response"/><con:assertion type="Simple Contains" id="94f5e560-630d-45e2-b077-88264b9c46d8" name="exist msg contains"><con:configuration><token>(?s).*&lt;result>Exist&lt;/result>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:attachment><con:name>attachment.xml</con:name><con:contentType>text/xml</con:contentType><con:size>232</con:size><con:contentId>attachment.xml</con:contentId><con:data>UEsDBBQACAgIACOICE0AAAAAAAAAAAAAAAAOAAAAYXR0YWNobWVudC54bWyzCXGMUKjIzckrtlUqLcqzyk1NTyxPLEq10i/OzC3NSSxJ1S8vyoSReuXFKTlKdrxcnDZAXi6IwWnj5+jravdqZ8Obrp1vZ7TY6IP5YJmgIB87QyNjE1MzXQhlbqMPEgNLAi02MLSztLTRh7DggkZ2lhYQQSOIoKOLS5Czi52pibGRoY0+lAdTHuAYaadramCgUJ6fB9YFEgA5UB/qQrCgHQBQSwcIm2yBr6IAAADoAAAAUEsBAhQAFAAICAgAI4gITZtsga+iAAAA6AAAAA4AAAAAAAAAAAAAAAAAAAAAAGF0dGFjaG1lbnQueG1sUEsFBgAAAAABAAEAPAAAAN4AAAAAAA==</con:data><con:id>10fffa98-6d96-4227-88fb-f353c8b3815b</con:id></con:attachment><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/function/Assign/mw_hasAttachment/mw_hasAttachment.wsdl/mw_hasAttachmentPortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="19aa489b-41ef-4343-a336-90e6aca1e09b" name="receive - mw_hasAttachment without attachment"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>mw_hasAttachment</con:interface><con:operation>receive</con:operation><con:request name="receive - mw_hasAttachment without attachment" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="ef0942ec-1968-4104-8dba-f663d109b0d5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/function/Assign/mw_hasAttachment</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:mw="urn:megaware:/mediate/qa/run/function/Assign/mw_hasAttachment/mw_hasAttachment.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <mw:request>\r
+         <value></value>\r
+      </mw:request>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="ae0c9599-37cd-423c-b7ea-fb69720bee41" name="SOAP Response"/><con:assertion type="Simple Contains" id="29cdf1a3-639f-451c-bd47-9978dc90be5c" name="not exsit msg contains"><con:configuration><token>(?s).*&lt;result>Not Exist&lt;/result>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/function/Assign/mw_hasAttachment/mw_hasAttachment.wsdl/mw_hasAttachmentPortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="6ceb9a91-ca53-4e81-a348-9a413a88f3f3" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="mw_hasVariable TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="ec3221d7-e812-413c-a271-c0ac3f1e6fa8" name="receive - mw_hasVariable has"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>mw_hasVariable</con:interface><con:operation>receive</con:operation><con:request name="receive - mw_hasVariable has" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="e8934b8e-4c29-4b19-8cf2-9dabcd83029b"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/function/Assign/mw_hasVariable</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:mw="urn:megaware:/mediate/qa/run/function/Assign/mw_hasVariable/mw_hasVariable.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <mw:request>\r
+         <value>work</value>\r
+      </mw:request>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="7f5a440b-ba5b-4b95-a152-aed0ab575410" name="SOAP Response"/><con:assertion type="Simple Contains" id="1347fc9c-b670-471a-b849-3c740fc31452" name="exist msg contains"><con:configuration><token>(?s).*&lt;result>Exist&lt;/result>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/function/Assign/mw_hasVariable/mw_hasVariable.wsdl/mw_hasVariablePortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="9de1d973-5127-4835-a105-6b2f2eb56ee5" name="receive - mw_hasVariable doesn't have"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>mw_hasVariable</con:interface><con:operation>receive</con:operation><con:request name="receive - mw_hasVariable doesn't have" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="5daf96bd-4486-44fc-8cb6-9030a96240c2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/function/Assign/mw_hasVariable</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:mw="urn:megaware:/mediate/qa/run/function/Assign/mw_hasVariable/mw_hasVariable.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <mw:request>\r
+         <value>foo</value>\r
+      </mw:request>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="02a5f102-ffca-424e-831c-aed472bdc318" name="SOAP Response"/><con:assertion type="Simple Contains" id="a99a3c1d-c89f-4735-945e-d93a45aafb6f" name="not exist msg contains"><con:configuration><token>(?s).*&lt;result>Not Exist&lt;/result>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/function/Assign/mw_hasVariable/mw_hasVariable.wsdl/mw_hasVariablePortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

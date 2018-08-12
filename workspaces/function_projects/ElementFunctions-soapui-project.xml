@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="0c6a9824-ed39-411b-bf7c-a6ae23ca281b" activeEnvironment="Default" name="ElementFunctions" resourceRoot="${projectDir}" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="0208847d-5a81-44a7-8c70-e3172863c56f" wsaVersion="NONE" name="elementFunctions" type="wsdl" bindingName="{urn:megaware:/mediate/qa/run/function/ElementFunctionsTest/ElementFunctionsTest.wsdl}ElementFunctionsTestSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="http://${basicAddress}/mediate/qa/run/function/ElementFunctionsTest?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://192.168.0.130:57720/mediate/qa/run/function/ElementFunctionsTest?WSDL"><con:part><con:url>http://192.168.0.130:57720/mediate/qa/run/function/ElementFunctionsTest?WSDL</con:url><con:content><![CDATA[<definitions targetNamespace="urn:megaware:/mediate/qa/run/function/ElementFunctionsTest/ElementFunctionsTest.wsdl" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:mw="http://www.mobicware.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="urn:megaware:/mediate/qa/run/function/ElementFunctionsTest/ElementFunctionsTest.wsdl" xmlns:wsa="http://www.w3.org/2005/08/addressing">
+  <types>
+    <s:schema targetNamespace="urn:megaware:/mediate/qa/run/function/ElementFunctionsTest/ElementFunctionsTest.wsdl">
+      <s:element mw:isEncrypt="no" name="msg">
+        <s:complexType>
+          <s:sequence>
+            <s:element default="ABCDEFG" maxOccurs="1" minOccurs="1" mw:charset="UTF-8" mw:column="" mw:delimiter="" mw:direction="right" mw:encoding="Plain" mw:function="Enpad" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:pad="X" mw:preamble="" name="enPad" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" mw:amount="-1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:filed="date" mw:format="yyyy-MM-dd HH:mm:ss.SSS" mw:function="CurrentDate" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="currentDate" type="s:string"/>
+            <s:element default="ABCDEFG" maxOccurs="1" minOccurs="1" mw:beginIndex="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:endIndex="7" mw:function="Substring" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="subString" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:fixedValue="이정학" mw:function="SetSessionProperty" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" mw:property="myName" name="setSessionProperty" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="SessionProperty" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" mw:property="myName" name="sessionProperty" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="Sequence" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" mw:sequenceLength="10" mw:sequenceName="seq" name="sequence" type="s:string"/>
+            <s:element default="ABCDEFG" maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="Replace" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" mw:regex="^ABC" mw:replacement="---" name="replace" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:dateFormat="yyyy-MM-dd" mw:delimiter="" mw:encoding="Plain" mw:function="MWTableSeq" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="MWTableSeq" type="s:string"/>
+            <s:element default="    ABCDEFG     " maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:direction="right" mw:encoding="Plain" mw:function="Trim" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="trim" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </types>
+  <message name="receiveInputMessage">
+    <part element="tns:msg" name="receiveInput"/>
+  </message>
+  <message name="receiveOutputMessage">
+    <part element="tns:msg" name="receiveOutput"/>
+  </message>
+  <portType name="ElementFunctionsTestPortType">
+    <operation name="receive">
+      <input message="tns:receiveInputMessage" name="receiveInput"/>
+      <output message="tns:receiveOutputMessage" name="receiveOutput"/>
+    </operation>
+  </portType>
+  <binding name="ElementFunctionsTestSOAP12Binding" type="tns:ElementFunctionsTestPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive">
+      <soap12:operation soapAction="/mediate/qa/run/function/ElementFunctionsTest" style="document"/>
+      <input name="receiveInput">
+        <soap12:body use="literal"/>
+      </input>
+      <output name="receiveOutput">
+        <soap12:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="ElementFunctionsTestSOAP11Binding" type="tns:ElementFunctionsTestPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive">
+      <soap11:operation soapAction="/mediate/qa/run/function/ElementFunctionsTest" style="document"/>
+      <input name="receiveInput">
+        <soap11:body use="literal"/>
+      </input>
+      <output name="receiveOutput">
+        <soap11:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="ElementFunctionsTestHTTPGETBinding" type="tns:ElementFunctionsTestPortType">
+    <http:binding verb="GET"/>
+    <operation name="receive">
+      <http:operation location="/msg"/>
+      <input name="receiveInput">
+        <http:urlEncoded/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="ElementFunctionsTestHTTPPOSTXMLBinding" type="tns:ElementFunctionsTestPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/msg"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/xml"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="ElementFunctionsTestHTTPPOSTFORMBinding" type="tns:ElementFunctionsTestPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/msg"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/x-www-form-urlencoded"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="ElementFunctionsTestHTTPPOSTJSONBinding" type="tns:ElementFunctionsTestPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/msg"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/json"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="ElementFunctionsTestService">
+    <port binding="tns:ElementFunctionsTestSOAP12Binding" name="ElementFunctionsTestSOAP12BindingPort">
+      <soap12:address location="http://192.168.0.130:57720/mediate/qa/run/function/ElementFunctionsTest"/>
+    </port>
+    <port binding="tns:ElementFunctionsTestSOAP11Binding" name="ElementFunctionsTestSOAP11BindingPort">
+      <soap11:address location="http://192.168.0.130:57720/mediate/qa/run/function/ElementFunctionsTest"/>
+    </port>
+    <port binding="tns:ElementFunctionsTestHTTPGETBinding" name="ElementFunctionsTestHTTPGETBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/function/ElementFunctionsTest"/>
+    </port>
+    <port binding="tns:ElementFunctionsTestHTTPPOSTXMLBinding" name="ElementFunctionsTestHTTPPOSTXMLBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/function/ElementFunctionsTest"/>
+    </port>
+    <port binding="tns:ElementFunctionsTestHTTPPOSTFORMBinding" name="ElementFunctionsTestHTTPPOSTFORMBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/function/ElementFunctionsTest"/>
+    </port>
+    <port binding="tns:ElementFunctionsTestHTTPPOSTJSONBinding" name="ElementFunctionsTestHTTPPOSTJSONBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/function/ElementFunctionsTest"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://192.168.0.130:57720/mediate/qa/run/function/ElementFunctionsTest</con:endpoint></con:endpoints><con:operation id="99e6924d-e84b-4a8c-879e-fc027012b133" isOneWay="false" action="/mediate/qa/run/function/ElementFunctionsTest" name="receive" bindingOperationName="receive" type="Request-Response" outputName="receiveOutput" inputName="receiveInput" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="934eb630-6f9c-46d4-a10c-b37a5f99082c" name="elementFunctions"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/function/ElementFunctionsTest</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:elem="urn:megaware:/mediate/qa/run/function/ElementFunctionsTest/ElementFunctionsTest.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <elem:msg>\r
+         <enPad>ABCDEFG</enPad>\r
+         <currentDate></currentDate>\r
+         <subString>ABCDEFG</subString>\r
+         <setSessionProperty></setSessionProperty>\r
+         <sessionProperty></sessionProperty>\r
+         <sequence></sequence>\r
+         <replace>ABCDEFG</replace>\r
+         <MWTableSeq></MWTableSeq>\r
+         <trim>ABCDEFG</trim>\r
+      </elem:msg>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/function/ElementFunctionsTest/ElementFunctionsTest.wsdl/ElementFunctionsTestPortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="50c7cf3e-e243-4c54-8c8e-28c6f5cf2fb6" name="elementFunctions TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="00641ec8-e763-4397-90d5-8b1ba6148500" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="elementFunctions TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="37639ecf-2883-4052-b88a-95eaac4a476e" name="receive - elementFunctions"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>elementFunctions</con:interface><con:operation>receive</con:operation><con:request name="receive - elementFunctions" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="105c3c63-3fce-4d48-9ac5-9c6a447c7846"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/function/ElementFunctionsTest</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:elem="urn:megaware:/mediate/qa/run/function/ElementFunctionsTest/ElementFunctionsTest.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <elem:msg>\r
+         <enPad>ABCDEFG</enPad>\r
+         <currentDate></currentDate>\r
+         <subString>ABCDEFG</subString>\r
+         <setSessionProperty></setSessionProperty>\r
+         <sessionProperty></sessionProperty>\r
+         <sequence></sequence>\r
+         <replace>ABCDEFG</replace>\r
+         <MWTableSeq></MWTableSeq>\r
+         <trim>ABCDEFG</trim>\r
+      </elem:msg>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:assertion type="Simple Contains" id="ea613c88-a654-4819-9cc1-5f44cadd492e" name="enPad contains"><con:configuration><token>(?s).*&lt;enPad>ABCDEFGXXXXXXXXXXXXX&lt;/enPad>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="6d1fde41-2d85-4488-b1a8-b4132941247a" name="currentData contains"><con:configuration><token>(?s).*&lt;currentDate>[0-9]{4}-[0-9]{2}-[0-9]{2}\s[0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{3}&lt;/currentDate>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="6d1fde41-2d85-4488-b1a8-b4132941247a" name="subString contains"><con:configuration><token>(?s).*&lt;subString>BCDEFG&lt;/subString>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="6d1fde41-2d85-4488-b1a8-b4132941247a" name="sessionProperty contains"><con:configuration><token>(?s).*&lt;sessionProperty>이정학&lt;/sessionProperty>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="6d1fde41-2d85-4488-b1a8-b4132941247a" name="sequence contains"><con:configuration><token>(?s).*&lt;sequence>0000000001&lt;/sequence>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="6d1fde41-2d85-4488-b1a8-b4132941247a" name="replace contains"><con:configuration><token>(?s).*&lt;replace>---DEFG&lt;/replace>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="6d1fde41-2d85-4488-b1a8-b4132941247a" name="mwTableSeq contains"><con:configuration><token>(?s).*&lt;MWTableSeq>INSTANCE_EVENT\d\d&lt;/MWTableSeq>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="6d1fde41-2d85-4488-b1a8-b4132941247a" name="trim contains"><con:configuration><token>(?s).*&lt;trim>ABCDEFG&lt;/trim>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/function/ElementFunctionsTest/ElementFunctionsTest.wsdl/ElementFunctionsTestPortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

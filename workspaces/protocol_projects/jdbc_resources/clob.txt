@@ -1,0 +1,41 @@
+===============================================
+Use Megaware Smart Integration Agreement 
+===============================================
+
+Terms of Use
+
+  Thank you for using Magaware Smart Integration software("Megaware") from Megatus Co., Ltd. ("Megatus"). 
+  All software, documentation, information and other materials provided from Magatus
+  may be used solely under the following terms and conditions. 
+  Installation of Megaware constitutes your agreement to the Terms of Use. 
+  Please read the terms carefully before installation.
+
+Use of Software 
+  Magaware is protected by the Universal Copyright Convention and intellectual property rights.
+
+1. License
+   Megatus grants each customer who paid according to the contract a non-exclusive 
+   and non-transferable license to use Megaware under the condition of the following terms.
+   The software may be copied for backup and other permitted purposes, 
+   and all copies you make must include any copyright 
+   or other proprietary notices originally shown or included in the software. 
+   All rights not stipulated shall be governed by Megatus.
+
+2. Limitations
+   Except as otherwise expressly stated, 
+   customers are granted no ownership or intellectual property rights.
+   These terms are not about sale of software rights but the use of Megaware.
+   Customers may not rent or exploit any parts of the software 
+   in any way including reverse engineering and decompilation.
+   Software upgrades and all other software provided for support are regarded as parts of Megaware, 
+   and may also be used under the these terms unless otherwise agreed.
+
+3. termination of Use
+   Megatus may terminate the contract if Megatus determines, 
+   in its sole discretion, that you have infringed the terms. 
+   Upon termination of the contract, 
+   you must destroy or return all materials obtained from us.
+
+4. Open Source license
+   Magaware operates based on various open sources, 
+   and use of these open sources must be under terms and conditions of the open sources.

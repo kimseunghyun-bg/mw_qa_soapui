@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="4b229cf2-a2bb-433b-8ef3-9bf9126a91e6" activeEnvironment="Default" name="InvokerFunctions" resourceRoot="${projectDir}" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="7af7f81b-8141-470a-b717-2442d2b3acac" wsaVersion="NONE" name="date" type="wsdl" bindingName="{urn:megaware:/mediate/qa/run/function/invoker/date/date.wsdl}dateSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="http://${basicAddress}/mediate/qa/run/function/invoker/date?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://192.168.0.130:57720/mediate/qa/run/function/invoker/date?WSDL"><con:part><con:url>http://192.168.0.130:57720/mediate/qa/run/function/invoker/date?WSDL</con:url><con:content><![CDATA[<definitions targetNamespace="urn:megaware:/mediate/qa/run/function/invoker/date/date.wsdl" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:mw="http://www.mobicware.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="urn:megaware:/mediate/qa/run/function/invoker/date/date.wsdl" xmlns:wsa="http://www.w3.org/2005/08/addressing">
+  <types>
+    <s:schema targetNamespace="urn:megaware:/mediate/qa/run/function/invoker/date/date.wsdl">
+      <s:element mw:isEncrypt="no" mw:tableName="invokerFunctions" name="request">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="unbounded" minOccurs="0" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="item">
+              <s:complexType>
+                <s:sequence>
+                  <s:element default="date" maxOccurs="1" minOccurs="1" mw:column="functionName" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="functionName" type="s:string"/>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="functionValue" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="functionValue" type="s:string"/>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element mw:isEncrypt="no" mw:tableName="invokerFunctions" name="response">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="unbounded" minOccurs="0" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="item">
+              <s:complexType>
+                <s:sequence>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="functionName" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="functionName" type="s:string"/>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="functionValue" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="functionValue" type="s:string"/>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </types>
+  <message name="receiveInputMessage">
+    <part element="tns:request" name="receiveInput"/>
+  </message>
+  <message name="receiveOutputMessage">
+    <part element="tns:response" name="receiveOutput"/>
+  </message>
+  <portType name="datePortType">
+    <operation name="receive">
+      <input message="tns:receiveInputMessage" name="receiveInput"/>
+      <output message="tns:receiveOutputMessage" name="receiveOutput"/>
+    </operation>
+  </portType>
+  <binding name="dateSOAP12Binding" type="tns:datePortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive">
+      <soap12:operation soapAction="/mediate/qa/run/function/invoker/date" style="document"/>
+      <input name="receiveInput">
+        <soap12:body use="literal"/>
+      </input>
+      <output name="receiveOutput">
+        <soap12:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="dateSOAP11Binding" type="tns:datePortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive">
+      <soap11:operation soapAction="/mediate/qa/run/function/invoker/date" style="document"/>
+      <input name="receiveInput">
+        <soap11:body use="literal"/>
+      </input>
+      <output name="receiveOutput">
+        <soap11:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="dateHTTPGETBinding" type="tns:datePortType">
+    <http:binding verb="GET"/>
+    <operation name="receive">
+      <http:operation location="/request"/>
+      <input name="receiveInput">
+        <http:urlEncoded/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="dateHTTPPOSTXMLBinding" type="tns:datePortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/request"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/xml"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="dateHTTPPOSTFORMBinding" type="tns:datePortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/request"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/x-www-form-urlencoded"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="dateHTTPPOSTJSONBinding" type="tns:datePortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/request"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/json"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="dateService">
+    <port binding="tns:dateSOAP12Binding" name="dateSOAP12BindingPort">
+      <soap12:address location="http://192.168.0.130:57720/mediate/qa/run/function/invoker/date"/>
+    </port>
+    <port binding="tns:dateSOAP11Binding" name="dateSOAP11BindingPort">
+      <soap11:address location="http://192.168.0.130:57720/mediate/qa/run/function/invoker/date"/>
+    </port>
+    <port binding="tns:dateHTTPGETBinding" name="dateHTTPGETBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/function/invoker/date"/>
+    </port>
+    <port binding="tns:dateHTTPPOSTXMLBinding" name="dateHTTPPOSTXMLBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/function/invoker/date"/>
+    </port>
+    <port binding="tns:dateHTTPPOSTFORMBinding" name="dateHTTPPOSTFORMBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/function/invoker/date"/>
+    </port>
+    <port binding="tns:dateHTTPPOSTJSONBinding" name="dateHTTPPOSTJSONBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/function/invoker/date"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://192.168.0.130:57720/mediate/qa/run/function/invoker/date</con:endpoint></con:endpoints><con:operation id="d6acbcdd-7366-4fe0-ac39-7575ed46ef5f" isOneWay="false" action="/mediate/qa/run/function/invoker/date" name="receive" bindingOperationName="receive" type="Request-Response" outputName="receiveOutput" inputName="receiveInput" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="056e9d7f-7c4b-48f9-b3b6-8302348ec8b7" name="date"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/function/invoker/date</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:date="urn:megaware:/mediate/qa/run/function/invoker/date/date.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <date:request>\r
+         <item>\r
+            <functionName>date</functionName>\r
+            <functionValue></functionValue>\r
+         </item>\r
+      </date:request>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/function/invoker/date/date.wsdl/datePortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="68fbd8fe-5717-4f8d-bd33-dd6538823c28" wsaVersion="NONE" name="input" type="wsdl" bindingName="{urn:megaware:/mediate/qa/run/function/invoker/input/input.wsdl}inputSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="http://${basicAddress}/mediate/qa/run/function/invoker/input?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://192.168.0.130:57720/mediate/qa/run/function/invoker/input?WSDL"><con:part><con:url>http://192.168.0.130:57720/mediate/qa/run/function/invoker/input?WSDL</con:url><con:content><![CDATA[<definitions targetNamespace="urn:megaware:/mediate/qa/run/function/invoker/input/input.wsdl" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:mw="http://www.mobicware.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="urn:megaware:/mediate/qa/run/function/invoker/input/input.wsdl" xmlns:wsa="http://www.w3.org/2005/08/addressing">
+  <types>
+    <s:schema targetNamespace="urn:megaware:/mediate/qa/run/function/invoker/input/input.wsdl">
+      <s:element mw:isEncrypt="no" mw:tableName="invokerFunctions" name="request">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="unbounded" minOccurs="0" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="item">
+              <s:complexType>
+                <s:sequence>
+                  <s:element default="input" maxOccurs="1" minOccurs="1" mw:column="functionName" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="functionName" type="s:string"/>
+                  <s:element default="good" maxOccurs="1" minOccurs="1" mw:column="functionValue" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="functionValue" type="s:string"/>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element mw:isEncrypt="no" mw:tableName="invokerFunctions" name="response">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="unbounded" minOccurs="0" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="item">
+              <s:complexType>
+                <s:sequence>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="functionName" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="functionName" type="s:string"/>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="functionValue" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="functionValue" type="s:string"/>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </types>
+  <message name="receiveInputMessage">
+    <part element="tns:request" name="receiveInput"/>
+  </message>
+  <message name="receiveOutputMessage">
+    <part element="tns:response" name="receiveOutput"/>
+  </message>
+  <portType name="inputPortType">
+    <operation name="receive">
+      <input message="tns:receiveInputMessage" name="receiveInput"/>
+      <output message="tns:receiveOutputMessage" name="receiveOutput"/>
+    </operation>
+  </portType>
+  <binding name="inputSOAP12Binding" type="tns:inputPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive">
+      <soap12:operation soapAction="/mediate/qa/run/function/invoker/input" style="document"/>
+      <input name="receiveInput">
+        <soap12:body use="literal"/>
+      </input>
+      <output name="receiveOutput">
+        <soap12:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="inputSOAP11Binding" type="tns:inputPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive">
+      <soap11:operation soapAction="/mediate/qa/run/function/invoker/input" style="document"/>
+      <input name="receiveInput">
+        <soap11:body use="literal"/>
+      </input>
+      <output name="receiveOutput">
+        <soap11:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="inputHTTPGETBinding" type="tns:inputPortType">
+    <http:binding verb="GET"/>
+    <operation name="receive">
+      <http:operation location="/request"/>
+      <input name="receiveInput">
+        <http:urlEncoded/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="inputHTTPPOSTXMLBinding" type="tns:inputPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/request"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/xml"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="inputHTTPPOSTFORMBinding" type="tns:inputPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/request"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/x-www-form-urlencoded"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="inputHTTPPOSTJSONBinding" type="tns:inputPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/request"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/json"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="inputService">
+    <port binding="tns:inputSOAP12Binding" name="inputSOAP12BindingPort">
+      <soap12:address location="http://192.168.0.130:57720/mediate/qa/run/function/invoker/input"/>
+    </port>
+    <port binding="tns:inputSOAP11Binding" name="inputSOAP11BindingPort">
+      <soap11:address location="http://192.168.0.130:57720/mediate/qa/run/function/invoker/input"/>
+    </port>
+    <port binding="tns:inputHTTPGETBinding" name="inputHTTPGETBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/function/invoker/input"/>
+    </port>
+    <port binding="tns:inputHTTPPOSTXMLBinding" name="inputHTTPPOSTXMLBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/function/invoker/input"/>
+    </port>
+    <port binding="tns:inputHTTPPOSTFORMBinding" name="inputHTTPPOSTFORMBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/function/invoker/input"/>
+    </port>
+    <port binding="tns:inputHTTPPOSTJSONBinding" name="inputHTTPPOSTJSONBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/function/invoker/input"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://192.168.0.130:57720/mediate/qa/run/function/invoker/input</con:endpoint></con:endpoints><con:operation id="023e4630-b140-4495-83a9-f048206937ce" isOneWay="false" action="/mediate/qa/run/function/invoker/input" name="receive" bindingOperationName="receive" type="Request-Response" outputName="receiveOutput" inputName="receiveInput" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b4061d47-7120-4867-bfb3-5d5c6a02c801" name="input"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/function/invoker/input</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:inp="urn:megaware:/mediate/qa/run/function/invoker/input/input.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <inp:request>\r
+         <!--Zero or more repetitions:-->\r
+         <item>\r
+            <functionName>input</functionName>\r
+            <functionValue>good</functionValue>\r
+         </item>\r
+      </inp:request>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/function/invoker/input/input.wsdl/inputPortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="96fe4f44-5055-4897-8d29-dd6d2713171d" wsaVersion="NONE" name="sessiondata" type="wsdl" bindingName="{urn:megaware:/mediate/qa/run/function/invoker/sessiondata/sessiondata.wsdl}sessiondataSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="http://${basicAddress}/mediate/qa/run/function/invoker/sessiondata?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://192.168.0.130:57720/mediate/qa/run/function/invoker/sessiondata?WSDL"><con:part><con:url>http://192.168.0.130:57720/mediate/qa/run/function/invoker/sessiondata?WSDL</con:url><con:content><![CDATA[<definitions targetNamespace="urn:megaware:/mediate/qa/run/function/invoker/sessiondata/sessiondata.wsdl" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:mw="http://www.mobicware.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="urn:megaware:/mediate/qa/run/function/invoker/sessiondata/sessiondata.wsdl" xmlns:wsa="http://www.w3.org/2005/08/addressing">
+  <types>
+    <s:schema targetNamespace="urn:megaware:/mediate/qa/run/function/invoker/sessiondata/sessiondata.wsdl">
+      <s:element mw:isEncrypt="no" mw:tableName="invokerFunctions" name="request">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="unbounded" minOccurs="0" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="item">
+              <s:complexType>
+                <s:sequence>
+                  <s:element default="sessiondata" maxOccurs="1" minOccurs="1" mw:column="functionName" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="functionName" type="s:string"/>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="functionValue" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="functionValue" type="s:string"/>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element mw:isEncrypt="no" mw:tableName="invokerFunctions" name="response">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="unbounded" minOccurs="0" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="item">
+              <s:complexType>
+                <s:sequence>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="functionName" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="functionName" type="s:string"/>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="functionValue" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="functionValue" type="s:string"/>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </types>
+  <message name="receiveInputMessage">
+    <part element="tns:request" name="receiveInput"/>
+  </message>
+  <message name="receiveOutputMessage">
+    <part element="tns:response" name="receiveOutput"/>
+  </message>
+  <portType name="sessiondataPortType">
+    <operation name="receive">
+      <input message="tns:receiveInputMessage" name="receiveInput"/>
+      <output message="tns:receiveOutputMessage" name="receiveOutput"/>
+    </operation>
+  </portType>
+  <binding name="sessiondataSOAP12Binding" type="tns:sessiondataPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive">
+      <soap12:operation soapAction="/mediate/qa/run/function/invoker/sessiondata" style="document"/>
+      <input name="receiveInput">
+        <soap12:body use="literal"/>
+      </input>
+      <output name="receiveOutput">
+        <soap12:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="sessiondataSOAP11Binding" type="tns:sessiondataPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive">
+      <soap11:operation soapAction="/mediate/qa/run/function/invoker/sessiondata" style="document"/>
+      <input name="receiveInput">
+        <soap11:body use="literal"/>
+      </input>
+      <output name="receiveOutput">
+        <soap11:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="sessiondataHTTPGETBinding" type="tns:sessiondataPortType">
+    <http:binding verb="GET"/>
+    <operation name="receive">
+      <http:operation location="/request"/>
+      <input name="receiveInput">
+        <http:urlEncoded/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="sessiondataHTTPPOSTXMLBinding" type="tns:sessiondataPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/request"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/xml"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="sessiondataHTTPPOSTFORMBinding" type="tns:sessiondataPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/request"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/x-www-form-urlencoded"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="sessiondataHTTPPOSTJSONBinding" type="tns:sessiondataPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/request"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/json"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="sessiondataService">
+    <port binding="tns:sessiondataSOAP12Binding" name="sessiondataSOAP12BindingPort">
+      <soap12:address location="http://192.168.0.130:57720/mediate/qa/run/function/invoker/sessiondata"/>
+    </port>
+    <port binding="tns:sessiondataSOAP11Binding" name="sessiondataSOAP11BindingPort">
+      <soap11:address location="http://192.168.0.130:57720/mediate/qa/run/function/invoker/sessiondata"/>
+    </port>
+    <port binding="tns:sessiondataHTTPGETBinding" name="sessiondataHTTPGETBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/function/invoker/sessiondata"/>
+    </port>
+    <port binding="tns:sessiondataHTTPPOSTXMLBinding" name="sessiondataHTTPPOSTXMLBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/function/invoker/sessiondata"/>
+    </port>
+    <port binding="tns:sessiondataHTTPPOSTFORMBinding" name="sessiondataHTTPPOSTFORMBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/function/invoker/sessiondata"/>
+    </port>
+    <port binding="tns:sessiondataHTTPPOSTJSONBinding" name="sessiondataHTTPPOSTJSONBindingPort">
+      <http:address location="http://192.168.0.130:57720/mediate/qa/run/function/invoker/sessiondata"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://192.168.0.130:57720/mediate/qa/run/function/invoker/sessiondata</con:endpoint></con:endpoints><con:operation id="baff214a-43e8-49eb-a152-c3e925e463d1" isOneWay="false" action="/mediate/qa/run/function/invoker/sessiondata" name="receive" bindingOperationName="receive" type="Request-Response" outputName="receiveOutput" inputName="receiveInput" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="529ae3fb-0629-43bf-b68b-308b860c444b" name="sessiondata"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/function/invoker/sessiondata</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ses="urn:megaware:/mediate/qa/run/function/invoker/sessiondata/sessiondata.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <ses:request>\r
+         <!--Zero or more repetitions:-->\r
+         <item>\r
+            <functionName>sessiondata</functionName>\r
+            <functionValue></functionValue>\r
+         </item>\r
+      </ses:request>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/function/invoker/sessiondata/sessiondata.wsdl/sessiondataPortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="6061c565-a79a-4601-85b2-87301a66bcc9" name="invokerFunctions TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="5bba5ef9-d6c9-4c75-93e1-26b76c0562d5" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="date TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="9e86ead6-98ec-4f48-bbd9-bdf86e4569a7" name="receive - date"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>date</con:interface><con:operation>receive</con:operation><con:request name="receive - date" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="4645aa24-4173-4ee0-9cfe-1641e719149a"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/function/invoker/date</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:date="urn:megaware:/mediate/qa/run/function/invoker/date/date.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <date:request>\r
+         <item>\r
+            <functionName>date</functionName>\r
+            <functionValue></functionValue>\r
+         </item>\r
+      </date:request>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="f7da025d-af4a-4cf2-b59a-a4670e8bd500" name="SOAP Response"/><con:assertion type="Simple Contains" id="9549af5d-5ab4-406b-99fd-562d581542cb" name="functionValue contains"><con:configuration><token>(?s).*&lt;functionValue>[0-9]{8}_[0-9]{9}&lt;/functionValue>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="XPath Match" id="23a3cbbf-8448-4fbf-8206-4ecb810de0da" name="functionValue not empty"><con:configuration><path>not(empty(//functionValue))</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/function/invoker/date/date.wsdl/datePortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:setupScript>package sample
+import groovy.sql.Sql
+
+// connect to db
+def driverClassName = testRunner.testCase.testSuite.project.getPropertyValue( "driverClassName" )
+def url = testRunner.testCase.testSuite.project.getPropertyValue( "url" )
+def username = testRunner.testCase.testSuite.project.getPropertyValue( "username" )
+def password = testRunner.testCase.testSuite.project.getPropertyValue( "password" )
+//def password = ''
+
+com.eviware.soapui.support.GroovyUtils.registerJdbcDriver(driverClassName);
+def sql = Sql.newInstance(url,
+      username, password, driverClassName)
+// the sql script that delete rows
+def createScript = """
+        CREATE TABLE invokerFunctions (
+	functionName VARCHAR,
+	functionValue VARCHAR
+)
+        """
+// execute the delete rows script
+try{
+	def a = sql.execute(createScript);
+} catch (Exception e){
+
+}
+
+// close connection
+sql.close()</con:setupScript><con:properties/></con:testCase><con:testCase id="c41b4431-0df7-4807-bb85-b7aed9796583" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="input TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="9bd68361-3107-42ac-80c7-7a1938cf82ba" name="receive - input"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>input</con:interface><con:operation>receive</con:operation><con:request name="receive - input" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="f2b10432-ff1f-412b-af42-74921b8b036d"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/function/invoker/input</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:inp="urn:megaware:/mediate/qa/run/function/invoker/input/input.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <inp:request>\r
+         <!--Zero or more repetitions:-->\r
+         <item>\r
+            <functionName>input</functionName>\r
+            <functionValue>good</functionValue>\r
+         </item>\r
+      </inp:request>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="9a2dc790-1f45-4559-be1f-4b544c923c52" name="SOAP Response"/><con:assertion type="Simple Contains" id="9fe72ed5-23cb-4731-9744-01eb82834bf9" name="Contains"><con:configuration><token>(?s).*&lt;functionValue>good&lt;/functionValue>
+.*</token><ignoreCase>false</ignoreCase><useRegEx>true</useRegEx></con:configuration></con:assertion><con:assertion type="XPath Match" id="3fd9c05d-a463-4a6c-b0e5-9bac1e86610f" name="functionValue not empty"><con:configuration><path>not(empty(//functionValue))</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/function/invoker/input/input.wsdl/inputPortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:setupScript>package sample
+import groovy.sql.Sql
+
+// connect to db
+def driverClassName = testRunner.testCase.testSuite.project.getPropertyValue( "driverClassName" )
+def url = testRunner.testCase.testSuite.project.getPropertyValue( "url" )
+def username = testRunner.testCase.testSuite.project.getPropertyValue( "username" )
+def password = testRunner.testCase.testSuite.project.getPropertyValue( "password" )
+//def password = ''
+
+com.eviware.soapui.support.GroovyUtils.registerJdbcDriver(driverClassName);
+def sql = Sql.newInstance(url,
+      username, password, driverClassName)
+// the sql script that delete rows
+def createScript = """
+        CREATE TABLE invokerFunctions (
+	functionName VARCHAR,
+	functionValue VARCHAR
+)
+        """
+// execute the delete rows script
+try{
+	def a = sql.execute(createScript);
+} catch (Exception e){
+
+}
+
+// close connection
+sql.close()</con:setupScript><con:properties/></con:testCase><con:testCase id="baab6310-c9cb-4ee3-b857-c1a53cbebb80" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="sessiondata TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="40f994ba-621b-4440-9c3c-3a04765d3370" name="receive - sessiondata"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>sessiondata</con:interface><con:operation>receive</con:operation><con:request name="receive - sessiondata" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="cb9588dc-03b5-4112-831b-18a7adacc355"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/function/invoker/sessiondata</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ses="urn:megaware:/mediate/qa/run/function/invoker/sessiondata/sessiondata.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <ses:request>\r
+         <!--Zero or more repetitions:-->\r
+         <item>\r
+            <functionName>sessiondata</functionName>\r
+            <functionValue></functionValue>\r
+         </item>\r
+      </ses:request>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="ba1f41d5-b6d4-4fca-bba5-5cb02ff32727" name="SOAP Response"/><con:assertion type="XPath Match" id="4f8ee75c-1487-4522-9493-6112e4b382ab" name="functionValue not empty"><con:configuration><path>not(empty(//functionValue))</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/function/invoker/sessiondata/sessiondata.wsdl/sessiondataPortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:setupScript>package sample
+import groovy.sql.Sql
+
+// connect to db
+def driverClassName = testRunner.testCase.testSuite.project.getPropertyValue( "driverClassName" )
+def url = testRunner.testCase.testSuite.project.getPropertyValue( "url" )
+def username = testRunner.testCase.testSuite.project.getPropertyValue( "username" )
+def password = testRunner.testCase.testSuite.project.getPropertyValue( "password" )
+//def password = ''
+
+com.eviware.soapui.support.GroovyUtils.registerJdbcDriver(driverClassName);
+def sql = Sql.newInstance(url,
+      username, password, driverClassName)
+// the sql script that delete rows
+def createScript = """
+        CREATE TABLE invokerFunctions (
+	functionName VARCHAR,
+	functionValue VARCHAR
+)
+        """
+// execute the delete rows script
+try{
+	def a = sql.execute(createScript);
+} catch (Exception e){
+
+}
+
+// close connection
+sql.close()</con:setupScript><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties><con:property><con:name>driverClassName</con:name><con:value>org.h2.Driver</con:value></con:property><con:property><con:name>url</con:name><con:value>jdbc:h2:tcp://192.168.0.54:57722/../megaware.home/h2/megaware;IFEXISTS=TRUE;AUTO_RECONNECT=TRUE;QUERY_TIMEOUT=60000;LOCK_TIMEOUT=10000;CACHE_SIZE=65536;CACHE_TYPE=TQ</con:value></con:property><con:property><con:name>username</con:name><con:value>sa</con:value></con:property><con:property><con:name>password</con:name><con:value/></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

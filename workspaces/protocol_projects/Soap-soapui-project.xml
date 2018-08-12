@@ -1,0 +1,841 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="8edcbd2e-8aa0-4386-a3d3-6d9f447953eb" activeEnvironment="Default" name="Soap" resourceRoot="${projectDir}" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="Port">55000</con:setting><con:setting id="Set endpoint for HTTP Tunnel:">https://</con:setting><con:setting id="HTTP tunnel - KeyStore"/><con:setting id="HTTP tunnel - Password"/><con:setting id="HTTP tunnel - KeyPassword"/><con:setting id="HTTP tunnel - TrustStore"/><con:setting id="HTTP tunnel - TrustStore Password"/><con:setting id="Reuse request state">false</con:setting><con:setting id="HTTP tunnel - Set SSL Client Key Store path"/><con:setting id="Content types to monitor">*/html, */xml, */soap+xml, */json, */x-json, */javascript, */x-amf, */http</con:setting><con:setting id="HTTP tunnel - Set SSL Client Key Store Password"/><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="TestSuite" value="TestSuite 1"/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="Save Project" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="TestCase" value="&lt;all>"/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Select Report Type" value=""/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="Endpoint" value=""/>
+</xml-fragment>]]></con:setting></con:settings><con:interface xsi:type="con:WsdlInterface" id="c09af298-fbb8-4648-b52f-221aca24feec" wsaVersion="NONE" name="address" type="wsdl" bindingName="{urn:megaware:/mediate/qa/run/protocol/Soap/address/address.wsdl}addressSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="http://${basicAddress}/mediate/qa/run/protocol/Soap/address?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/address?WSDL"><con:part><con:url>http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/address?WSDL</con:url><con:content><![CDATA[<definitions targetNamespace="urn:megaware:/mediate/qa/run/protocol/Soap/address/address.wsdl" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:mw="http://www.mobicware.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="urn:megaware:/mediate/qa/run/protocol/Soap/address/address.wsdl" xmlns:wsa="http://www.w3.org/2005/08/addressing">
+  <types>
+    <s:schema targetNamespace="urn:megaware:/mediate/qa/run/protocol/Soap/address/address.wsdl">
+      <s:element mw:isEncrypt="no" mw:tableName="TAX" name="TAX">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="unbounded" minOccurs="0" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="item">
+              <s:complexType>
+                <s:sequence>
+                  <s:element default="manual" maxOccurs="1" minOccurs="0" mw:column="NAME" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="NAME" type="s:string"/>
+                  <s:element default="123456-1234567" maxOccurs="1" minOccurs="0" mw:column="RRL" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="RRL" type="s:string"/>
+                  <s:element default="99" maxOccurs="1" minOccurs="0" mw:column="TAX01" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="2" mw:preamble="" name="TAX01" type="s:string"/>
+                  <s:element default="98" maxOccurs="1" minOccurs="0" mw:column="TAX02" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="2" mw:preamble="" name="TAX02" type="s:string"/>
+                  <s:element default="01" maxOccurs="1" minOccurs="0" mw:column="ADDRCD" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="50" mw:preamble="" name="ADDRCD" type="s:string"/>
+                  <s:element default="-500 won" maxOccurs="1" minOccurs="0" mw:column="TAXPAY" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="TAXPAY" type="s:string"/>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element mw:isEncrypt="no" name="result">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="Manual">
+              <s:complexType>
+                <s:sequence>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="TAX">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element maxOccurs="unbounded" minOccurs="0" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="item">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="NAME" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="NAME" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="RRL" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="RRL" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="TAX01" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="2" mw:preamble="" name="TAX01" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="TAX02" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="2" mw:preamble="" name="TAX02" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="ADDRCD" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="50" mw:preamble="" name="ADDRCD" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="TAXPAY" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="TAXPAY" type="s:string"/>
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="Metadata">
+              <s:complexType>
+                <s:sequence>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="TAX">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element maxOccurs="unbounded" minOccurs="0" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="item">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="NAME" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="NAME" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="RRL" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="RRL" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="TAX01" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="2" mw:preamble="" name="TAX01" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="TAX02" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="2" mw:preamble="" name="TAX02" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="ADDRCD" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="50" mw:preamble="" name="ADDRCD" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="TAXPAY" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="TAXPAY" type="s:string"/>
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </types>
+  <message name="receiveInputMessage">
+    <part element="tns:TAX" name="receiveInput"/>
+  </message>
+  <message name="receiveOutputMessage">
+    <part element="tns:result" name="receiveOutput"/>
+  </message>
+  <portType name="addressPortType">
+    <operation name="receive">
+      <input message="tns:receiveInputMessage" name="receiveInput"/>
+      <output message="tns:receiveOutputMessage" name="receiveOutput"/>
+    </operation>
+  </portType>
+  <binding name="addressSOAP12Binding" type="tns:addressPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive">
+      <soap12:operation soapAction="/mediate/qa/run/protocol/Soap/address" style="document"/>
+      <input name="receiveInput">
+        <soap12:body use="literal"/>
+      </input>
+      <output name="receiveOutput">
+        <soap12:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="addressSOAP11Binding" type="tns:addressPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive">
+      <soap11:operation soapAction="/mediate/qa/run/protocol/Soap/address" style="document"/>
+      <input name="receiveInput">
+        <soap11:body use="literal"/>
+      </input>
+      <output name="receiveOutput">
+        <soap11:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="addressHTTPGETBinding" type="tns:addressPortType">
+    <http:binding verb="GET"/>
+    <operation name="receive">
+      <http:operation location="/TAX"/>
+      <input name="receiveInput">
+        <http:urlEncoded/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="addressHTTPPOSTXMLBinding" type="tns:addressPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/TAX"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/xml"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="addressHTTPPOSTFORMBinding" type="tns:addressPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/TAX"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/x-www-form-urlencoded"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="addressHTTPPOSTJSONBinding" type="tns:addressPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/TAX"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/json"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="addressService">
+    <port binding="tns:addressSOAP12Binding" name="addressSOAP12BindingPort">
+      <soap12:address location="http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/address"/>
+    </port>
+    <port binding="tns:addressSOAP11Binding" name="addressSOAP11BindingPort">
+      <soap11:address location="http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/address"/>
+    </port>
+    <port binding="tns:addressHTTPGETBinding" name="addressHTTPGETBindingPort">
+      <http:address location="http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/address"/>
+    </port>
+    <port binding="tns:addressHTTPPOSTXMLBinding" name="addressHTTPPOSTXMLBindingPort">
+      <http:address location="http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/address"/>
+    </port>
+    <port binding="tns:addressHTTPPOSTFORMBinding" name="addressHTTPPOSTFORMBindingPort">
+      <http:address location="http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/address"/>
+    </port>
+    <port binding="tns:addressHTTPPOSTJSONBinding" name="addressHTTPPOSTJSONBindingPort">
+      <http:address location="http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/address"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/address</con:endpoint><con:endpoint>http://DESKTOP-M20ULLI:8088/mockaddress</con:endpoint></con:endpoints><con:operation id="3e33532a-9851-4521-9f34-f14448e655f4" isOneWay="false" action="/mediate/qa/run/protocol/Soap/address" name="receive" bindingOperationName="receive" type="Request-Response" outputName="receiveOutput" inputName="receiveInput" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8423da72-0ddf-44c5-9ac2-a1a9adc23b33" name="address"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/protocol/Soap/address</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:add="urn:megaware:/mediate/qa/run/protocol/Soap/address/address.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <add:TAX>\r
+         <!--Zero or more repetitions:-->\r
+         <item>\r
+            <!--Optional:-->\r
+            <NAME>manual</NAME>\r
+            <!--Optional:-->\r
+            <RRL>123456-1234567</RRL>\r
+            <!--Optional:-->\r
+            <TAX01>99</TAX01>\r
+            <!--Optional:-->\r
+            <TAX02>98</TAX02>\r
+            <!--Optional:-->\r
+            <ADDRCD>01</ADDRCD>\r
+            <!--Optional:-->\r
+            <TAXPAY>-500 won</TAXPAY>\r
+         </item>\r
+      </add:TAX>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/protocol/Soap/address/address.wsdl/addressPortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="14e0125b-8cb4-4566-b6d3-1401c597519d" wsaVersion="NONE" name="bindingType" type="wsdl" bindingName="{urn:megaware:/mediate/qa/run/protocol/Soap/bindingType/bindingType.wsdl}bindingTypeSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="http://${basicAddress}:57020/mediate/qa/run/protocol/Soap/bindingType?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/bindingType?WSDL"><con:part><con:url>http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/bindingType?WSDL</con:url><con:content><![CDATA[<definitions targetNamespace="urn:megaware:/mediate/qa/run/protocol/Soap/bindingType/bindingType.wsdl" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:mw="http://www.mobicware.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="urn:megaware:/mediate/qa/run/protocol/Soap/bindingType/bindingType.wsdl" xmlns:wsa="http://www.w3.org/2005/08/addressing">
+  <types>
+    <s:schema targetNamespace="urn:megaware:/mediate/qa/run/protocol/Soap/bindingType/bindingType.wsdl">
+      <s:element mw:isEncrypt="no" mw:tableName="TAX" name="TAX">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="unbounded" minOccurs="0" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="item">
+              <s:complexType>
+                <s:sequence>
+                  <s:element default="soap12" maxOccurs="1" minOccurs="0" mw:column="NAME" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="NAME" type="s:string"/>
+                  <s:element default="123456-1234567" maxOccurs="1" minOccurs="0" mw:column="RRL" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="RRL" type="s:string"/>
+                  <s:element default="99" maxOccurs="1" minOccurs="0" mw:column="TAX01" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="2" mw:preamble="" name="TAX01" type="s:string"/>
+                  <s:element default="98" maxOccurs="1" minOccurs="0" mw:column="TAX02" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="2" mw:preamble="" name="TAX02" type="s:string"/>
+                  <s:element default="01" maxOccurs="1" minOccurs="0" mw:column="ADDRCD" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="50" mw:preamble="" name="ADDRCD" type="s:string"/>
+                  <s:element default="-500 won" maxOccurs="1" minOccurs="0" mw:column="TAXPAY" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="TAXPAY" type="s:string"/>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element mw:isEncrypt="no" name="result">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="Soap12">
+              <s:complexType>
+                <s:sequence>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="TAX">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element maxOccurs="unbounded" minOccurs="0" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="item">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="NAME" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="NAME" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="RRL" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="RRL" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="TAX01" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="2" mw:preamble="" name="TAX01" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="TAX02" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="2" mw:preamble="" name="TAX02" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="ADDRCD" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="50" mw:preamble="" name="ADDRCD" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="TAXPAY" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="TAXPAY" type="s:string"/>
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="Soap11">
+              <s:complexType>
+                <s:sequence>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="TAX">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element maxOccurs="unbounded" minOccurs="0" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="item">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="NAME" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="NAME" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="RRL" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="RRL" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="TAX01" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="2" mw:preamble="" name="TAX01" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="TAX02" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="2" mw:preamble="" name="TAX02" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="ADDRCD" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="50" mw:preamble="" name="ADDRCD" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="TAXPAY" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="TAXPAY" type="s:string"/>
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </types>
+  <message name="receiveInputMessage">
+    <part element="tns:TAX" name="receiveInput"/>
+  </message>
+  <message name="receiveOutputMessage">
+    <part element="tns:result" name="receiveOutput"/>
+  </message>
+  <portType name="bindingTypePortType">
+    <operation name="receive">
+      <input message="tns:receiveInputMessage" name="receiveInput"/>
+      <output message="tns:receiveOutputMessage" name="receiveOutput"/>
+    </operation>
+  </portType>
+  <binding name="bindingTypeSOAP12Binding" type="tns:bindingTypePortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive">
+      <soap12:operation soapAction="/mediate/qa/run/protocol/Soap/bindingType" style="document"/>
+      <input name="receiveInput">
+        <soap12:body use="literal"/>
+      </input>
+      <output name="receiveOutput">
+        <soap12:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="bindingTypeSOAP11Binding" type="tns:bindingTypePortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive">
+      <soap11:operation soapAction="/mediate/qa/run/protocol/Soap/bindingType" style="document"/>
+      <input name="receiveInput">
+        <soap11:body use="literal"/>
+      </input>
+      <output name="receiveOutput">
+        <soap11:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="bindingTypeHTTPGETBinding" type="tns:bindingTypePortType">
+    <http:binding verb="GET"/>
+    <operation name="receive">
+      <http:operation location="/TAX"/>
+      <input name="receiveInput">
+        <http:urlEncoded/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="bindingTypeHTTPPOSTXMLBinding" type="tns:bindingTypePortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/TAX"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/xml"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="bindingTypeHTTPPOSTFORMBinding" type="tns:bindingTypePortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/TAX"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/x-www-form-urlencoded"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="bindingTypeHTTPPOSTJSONBinding" type="tns:bindingTypePortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/TAX"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/json"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="bindingTypeService">
+    <port binding="tns:bindingTypeSOAP12Binding" name="bindingTypeSOAP12BindingPort">
+      <soap12:address location="http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/bindingType"/>
+    </port>
+    <port binding="tns:bindingTypeSOAP11Binding" name="bindingTypeSOAP11BindingPort">
+      <soap11:address location="http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/bindingType"/>
+    </port>
+    <port binding="tns:bindingTypeHTTPGETBinding" name="bindingTypeHTTPGETBindingPort">
+      <http:address location="http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/bindingType"/>
+    </port>
+    <port binding="tns:bindingTypeHTTPPOSTXMLBinding" name="bindingTypeHTTPPOSTXMLBindingPort">
+      <http:address location="http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/bindingType"/>
+    </port>
+    <port binding="tns:bindingTypeHTTPPOSTFORMBinding" name="bindingTypeHTTPPOSTFORMBindingPort">
+      <http:address location="http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/bindingType"/>
+    </port>
+    <port binding="tns:bindingTypeHTTPPOSTJSONBinding" name="bindingTypeHTTPPOSTJSONBindingPort">
+      <http:address location="http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/bindingType"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/bindingType</con:endpoint></con:endpoints><con:operation id="a0f1801c-50cb-4dfe-82d8-2a63af05cb2c" isOneWay="false" action="/mediate/qa/run/protocol/Soap/bindingType" name="receive" bindingOperationName="receive" type="Request-Response" outputName="receiveOutput" inputName="receiveInput" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d7b1b42c-dcf0-42b6-852e-ac23a61a7820" name="bindingType"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/protocol/Soap/bindingType</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:bin="urn:megaware:/mediate/qa/run/protocol/Soap/bindingType/bindingType.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <bin:TAX>\r
+         <!--Zero or more repetitions:-->\r
+         <item>\r
+            <!--Optional:-->\r
+            <NAME>soap12</NAME>\r
+            <!--Optional:-->\r
+            <RRL>123456-1234567</RRL>\r
+            <!--Optional:-->\r
+            <TAX01>99</TAX01>\r
+            <!--Optional:-->\r
+            <TAX02>98</TAX02>\r
+            <!--Optional:-->\r
+            <ADDRCD>01</ADDRCD>\r
+            <!--Optional:-->\r
+            <TAXPAY>-500 won</TAXPAY>\r
+         </item>\r
+      </bin:TAX>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/protocol/Soap/bindingType/bindingType.wsdl/bindingTypePortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="1b805a86-dc95-4e17-91d2-db1c68180b95" wsaVersion="NONE" name="formType" type="wsdl" bindingName="{urn:megaware:/mediate/qa/run/protocol/Soap/formType/formType.wsdl}formTypeSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="http://${basicAddress}/mediate/qa/run/protocol/Soap/formType?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/formType?wsdl"><con:part><con:url>http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/formType?wsdl</con:url><con:content><![CDATA[<definitions targetNamespace="urn:megaware:/mediate/qa/run/protocol/Soap/formType/formType.wsdl" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:mw="http://www.mobicware.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="urn:megaware:/mediate/qa/run/protocol/Soap/formType/formType.wsdl" xmlns:wsa="http://www.w3.org/2005/08/addressing">
+  <types>
+    <s:schema targetNamespace="urn:megaware:/mediate/qa/run/protocol/Soap/formType/formType.wsdl">
+      <s:element mw:isEncrypt="no" mw:prefix="qa" mw:tableName="TAX" mw:version="2" name="TAX" xmlns:qa="http://www.qa.com">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="unbounded" minOccurs="0" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="item">
+              <s:complexType>
+                <s:sequence>
+                  <s:element default="docQualified" maxOccurs="1" minOccurs="0" mw:column="NAME" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="NAME" type="s:string"/>
+                  <s:element default="123456-1234567" maxOccurs="1" minOccurs="0" mw:column="RRL" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="RRL" type="s:string"/>
+                  <s:element default="99" maxOccurs="1" minOccurs="0" mw:column="TAX01" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="2" mw:preamble="" name="TAX01" type="s:string"/>
+                  <s:element default="98" maxOccurs="1" minOccurs="0" mw:column="TAX02" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="2" mw:preamble="" name="TAX02" type="s:string"/>
+                  <s:element default="01" maxOccurs="1" minOccurs="0" mw:column="ADDRCD" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="50" mw:preamble="" name="ADDRCD" type="s:string"/>
+                  <s:element default="-500 won" maxOccurs="1" minOccurs="0" mw:column="TAXPAY" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="TAXPAY" type="s:string"/>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element mw:isEncrypt="no" name="result">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="docQualified">
+              <s:complexType>
+                <s:sequence>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="TAX">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="item">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="NAME" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="RRL" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="TAX01" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="TAX02" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="ADDRCD" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="TAXPAY" type="s:string"/>
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="rpcQualified">
+              <s:complexType>
+                <s:sequence>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="TAX">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="item">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="NAME" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="RRL" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="TAX01" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="TAX02" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="ADDRCD" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="TAXPAY" type="s:string"/>
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </types>
+  <message name="receiveInputMessage">
+    <part element="tns:TAX" name="receiveInput"/>
+  </message>
+  <message name="receiveOutputMessage">
+    <part element="tns:result" name="receiveOutput"/>
+  </message>
+  <portType name="formTypePortType">
+    <operation name="receive">
+      <input message="tns:receiveInputMessage" name="receiveInput"/>
+      <output message="tns:receiveOutputMessage" name="receiveOutput"/>
+    </operation>
+  </portType>
+  <binding name="formTypeSOAP12Binding" type="tns:formTypePortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive">
+      <soap12:operation soapAction="/mediate/qa/run/protocol/Soap/formType" style="document"/>
+      <input name="receiveInput">
+        <soap12:body use="literal"/>
+      </input>
+      <output name="receiveOutput">
+        <soap12:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="formTypeSOAP11Binding" type="tns:formTypePortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive">
+      <soap11:operation soapAction="/mediate/qa/run/protocol/Soap/formType" style="document"/>
+      <input name="receiveInput">
+        <soap11:body use="literal"/>
+      </input>
+      <output name="receiveOutput">
+        <soap11:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="formTypeHTTPGETBinding" type="tns:formTypePortType">
+    <http:binding verb="GET"/>
+    <operation name="receive">
+      <http:operation location="/TAX"/>
+      <input name="receiveInput">
+        <http:urlEncoded/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="formTypeHTTPPOSTXMLBinding" type="tns:formTypePortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/TAX"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/xml"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="formTypeHTTPPOSTFORMBinding" type="tns:formTypePortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/TAX"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/x-www-form-urlencoded"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="formTypeHTTPPOSTJSONBinding" type="tns:formTypePortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/TAX"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/json"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="formTypeService">
+    <port binding="tns:formTypeSOAP12Binding" name="formTypeSOAP12BindingPort">
+      <soap12:address location="http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/formType"/>
+    </port>
+    <port binding="tns:formTypeSOAP11Binding" name="formTypeSOAP11BindingPort">
+      <soap11:address location="http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/formType"/>
+    </port>
+    <port binding="tns:formTypeHTTPGETBinding" name="formTypeHTTPGETBindingPort">
+      <http:address location="http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/formType"/>
+    </port>
+    <port binding="tns:formTypeHTTPPOSTXMLBinding" name="formTypeHTTPPOSTXMLBindingPort">
+      <http:address location="http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/formType"/>
+    </port>
+    <port binding="tns:formTypeHTTPPOSTFORMBinding" name="formTypeHTTPPOSTFORMBindingPort">
+      <http:address location="http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/formType"/>
+    </port>
+    <port binding="tns:formTypeHTTPPOSTJSONBinding" name="formTypeHTTPPOSTJSONBindingPort">
+      <http:address location="http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/formType"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/formType</con:endpoint></con:endpoints><con:operation id="90d45b8a-06c1-4f9b-b7a6-dd67722e2fcf" isOneWay="false" action="/mediate/qa/run/protocol/Soap/formType" name="receive" bindingOperationName="receive" type="Request-Response" outputName="receiveOutput" inputName="receiveInput" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9e2a1e87-4996-47e0-84c7-9c5013aef1a0" name="formType"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/protocol/Soap/formType</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:for="urn:megaware:/mediate/qa/run/protocol/Soap/formType/formType.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <for:TAX>\r
+         <!--Zero or more repetitions:-->\r
+         <item>\r
+            <!--Optional:-->\r
+            <NAME>docQualified</NAME>\r
+            <!--Optional:-->\r
+            <RRL>123456-1234567</RRL>\r
+            <!--Optional:-->\r
+            <TAX01>99</TAX01>\r
+            <!--Optional:-->\r
+            <TAX02>98</TAX02>\r
+            <!--Optional:-->\r
+            <ADDRCD>01</ADDRCD>\r
+            <!--Optional:-->\r
+            <TAXPAY>-500 won</TAXPAY>\r
+         </item>\r
+      </for:TAX>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/protocol/Soap/formType/formType.wsdl/formTypePortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="896e3ca5-211b-4714-873b-fd178dece533" wsaVersion="NONE" name="httpVersion" type="wsdl" bindingName="{urn:megaware:/mediate/qa/run/protocol/Soap/httpVersion/httpVersion.wsdl}httpVersionSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="http://${basicAddress}/mediate/qa/run/protocol/Soap/httpVersion?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/httpVersion?WSDL"><con:part><con:url>http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/httpVersion?WSDL</con:url><con:content><![CDATA[<definitions targetNamespace="urn:megaware:/mediate/qa/run/protocol/Soap/httpVersion/httpVersion.wsdl" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:mw="http://www.mobicware.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="urn:megaware:/mediate/qa/run/protocol/Soap/httpVersion/httpVersion.wsdl" xmlns:wsa="http://www.w3.org/2005/08/addressing">
+  <types>
+    <s:schema targetNamespace="urn:megaware:/mediate/qa/run/protocol/Soap/httpVersion/httpVersion.wsdl">
+      <s:element mw:isEncrypt="no" mw:tableName="TAX" name="TAX">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="unbounded" minOccurs="0" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="item">
+              <s:complexType>
+                <s:sequence>
+                  <s:element default="http10" maxOccurs="1" minOccurs="0" mw:column="NAME" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="NAME" type="s:string"/>
+                  <s:element default="123456-1234567" maxOccurs="1" minOccurs="0" mw:column="RRL" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="RRL" type="s:string"/>
+                  <s:element default="99" maxOccurs="1" minOccurs="0" mw:column="TAX01" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="2" mw:preamble="" name="TAX01" type="s:string"/>
+                  <s:element default="98" maxOccurs="1" minOccurs="0" mw:column="TAX02" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="2" mw:preamble="" name="TAX02" type="s:string"/>
+                  <s:element default="01" maxOccurs="1" minOccurs="0" mw:column="ADDRCD" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="50" mw:preamble="" name="ADDRCD" type="s:string"/>
+                  <s:element default="-500 won" maxOccurs="1" minOccurs="0" mw:column="TAXPAY" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="TAXPAY" type="s:string"/>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element mw:isEncrypt="no" name="result">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="Http10">
+              <s:complexType>
+                <s:sequence>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="TAX">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element maxOccurs="unbounded" minOccurs="0" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="item">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="NAME" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="NAME" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="RRL" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="RRL" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="TAX01" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="2" mw:preamble="" name="TAX01" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="TAX02" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="2" mw:preamble="" name="TAX02" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="ADDRCD" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="50" mw:preamble="" name="ADDRCD" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="TAXPAY" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="TAXPAY" type="s:string"/>
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="Http11">
+              <s:complexType>
+                <s:sequence>
+                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="TAX">
+                    <s:complexType>
+                      <s:sequence>
+                        <s:element maxOccurs="unbounded" minOccurs="0" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="item">
+                          <s:complexType>
+                            <s:sequence>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="NAME" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="NAME" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="RRL" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="RRL" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="TAX01" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="2" mw:preamble="" name="TAX01" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="TAX02" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="2" mw:preamble="" name="TAX02" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="ADDRCD" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="50" mw:preamble="" name="ADDRCD" type="s:string"/>
+                              <s:element maxOccurs="1" minOccurs="0" mw:column="TAXPAY" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="TAXPAY" type="s:string"/>
+                            </s:sequence>
+                          </s:complexType>
+                        </s:element>
+                      </s:sequence>
+                    </s:complexType>
+                  </s:element>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </types>
+  <message name="receiveInputMessage">
+    <part element="tns:TAX" name="receiveInput"/>
+  </message>
+  <message name="receiveOutputMessage">
+    <part element="tns:result" name="receiveOutput"/>
+  </message>
+  <portType name="httpVersionPortType">
+    <operation name="receive">
+      <input message="tns:receiveInputMessage" name="receiveInput"/>
+      <output message="tns:receiveOutputMessage" name="receiveOutput"/>
+    </operation>
+  </portType>
+  <binding name="httpVersionSOAP12Binding" type="tns:httpVersionPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive">
+      <soap12:operation soapAction="/mediate/qa/run/protocol/Soap/httpVersion" style="document"/>
+      <input name="receiveInput">
+        <soap12:body use="literal"/>
+      </input>
+      <output name="receiveOutput">
+        <soap12:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="httpVersionSOAP11Binding" type="tns:httpVersionPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="receive">
+      <soap11:operation soapAction="/mediate/qa/run/protocol/Soap/httpVersion" style="document"/>
+      <input name="receiveInput">
+        <soap11:body use="literal"/>
+      </input>
+      <output name="receiveOutput">
+        <soap11:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="httpVersionHTTPGETBinding" type="tns:httpVersionPortType">
+    <http:binding verb="GET"/>
+    <operation name="receive">
+      <http:operation location="/TAX"/>
+      <input name="receiveInput">
+        <http:urlEncoded/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="httpVersionHTTPPOSTXMLBinding" type="tns:httpVersionPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/TAX"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/xml"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="httpVersionHTTPPOSTFORMBinding" type="tns:httpVersionPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/TAX"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/x-www-form-urlencoded"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="httpVersionHTTPPOSTJSONBinding" type="tns:httpVersionPortType">
+    <http:binding verb="POST"/>
+    <operation name="receive">
+      <http:operation location="/TAX"/>
+      <input name="receiveInput">
+        <mime:content part="receiveInput" type="application/json"/>
+      </input>
+      <output name="receiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="httpVersionService">
+    <port binding="tns:httpVersionSOAP12Binding" name="httpVersionSOAP12BindingPort">
+      <soap12:address location="http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/httpVersion"/>
+    </port>
+    <port binding="tns:httpVersionSOAP11Binding" name="httpVersionSOAP11BindingPort">
+      <soap11:address location="http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/httpVersion"/>
+    </port>
+    <port binding="tns:httpVersionHTTPGETBinding" name="httpVersionHTTPGETBindingPort">
+      <http:address location="http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/httpVersion"/>
+    </port>
+    <port binding="tns:httpVersionHTTPPOSTXMLBinding" name="httpVersionHTTPPOSTXMLBindingPort">
+      <http:address location="http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/httpVersion"/>
+    </port>
+    <port binding="tns:httpVersionHTTPPOSTFORMBinding" name="httpVersionHTTPPOSTFORMBindingPort">
+      <http:address location="http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/httpVersion"/>
+    </port>
+    <port binding="tns:httpVersionHTTPPOSTJSONBinding" name="httpVersionHTTPPOSTJSONBindingPort">
+      <http:address location="http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/httpVersion"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://192.168.0.8:57020/mediate/qa/run/protocol/Soap/httpVersion</con:endpoint></con:endpoints><con:operation id="3650bb38-fb39-43d6-9e61-2db1d7611136" isOneWay="false" action="/mediate/qa/run/protocol/Soap/httpVersion" name="receive" bindingOperationName="receive" type="Request-Response" outputName="receiveOutput" inputName="receiveInput" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c0dbb67d-a49e-4897-a65a-ae8783c6e663" name="httpVersion"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/protocol/Soap/httpVersion</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:htt="urn:megaware:/mediate/qa/run/protocol/Soap/httpVersion/httpVersion.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <htt:TAX>\r
+         <!--Zero or more repetitions:-->\r
+         <item>\r
+            <!--Optional:-->\r
+            <NAME>http10</NAME>\r
+            <!--Optional:-->\r
+            <RRL>123456-1234567</RRL>\r
+            <!--Optional:-->\r
+            <TAX01>99</TAX01>\r
+            <!--Optional:-->\r
+            <TAX02>98</TAX02>\r
+            <!--Optional:-->\r
+            <ADDRCD>01</ADDRCD>\r
+            <!--Optional:-->\r
+            <TAXPAY>-500 won</TAXPAY>\r
+         </item>\r
+      </htt:TAX>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/protocol/Soap/httpVersion/httpVersion.wsdl/httpVersionPortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:afterLoadScript/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
