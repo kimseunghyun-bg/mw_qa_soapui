@@ -783,8 +783,8 @@
   </con:interface>
   <con:interface anonymous="optional" bindingName="{urn:megaware:/mediate/qa/run/protocol/Jdbc/update/update.wsdl}updateSOAP12Binding" definition="http://${mwHubAddress}:${mwHubPort}/mediate/qa/run/protocol/Jdbc/update?WSDL" id="c16df161-84b1-487c-be7f-4200086a2cb8" name="update" soapVersion="1_2" type="wsdl" wsaVersion="NONE" xsi:type="con:WsdlInterface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <con:settings/>
-    <con:definitionCache/>
-    <con:endpoints>
+    
+    <con:definitionCache type="TEXT"/><con:endpoints>
       <con:endpoint>http://127.0.0.1:57720/mediate/qa/run/protocol/Jdbc/update</con:endpoint>
     </con:endpoints>
     <con:operation action="/mediate/qa/run/protocol/Jdbc/update" anonymous="optional" bindingOperationName="receive" id="eff51b8b-e3a3-4ed8-b3e9-17573c303ee8" inputName="receiveInput" isOneWay="false" name="receive" outputName="receiveOutput" receivesAttachments="false" sendsAttachments="false" type="Request-Response">
@@ -29021,9 +29021,15 @@ com.eviware.soapui.support.GroovyUtils.registerJdbcDriver(driverClassName)
 
 def workingName = testRunner.testCase.name
 
-def sql = Sql.newInstance(jdbcUrl, username, password, driverClassName) 
-
-sql.execute('DELETE FROM qa_jdbc WHERE workingname = ?', workingName)</con:setupScript>
+try {
+	def sql = Sql.newInstance(jdbcUrl, username, password, driverClassName) 
+	sql.execute('DELETE FROM qa_jdbc WHERE workingname = ?', workingName)
+} catch (Exception e) {
+	log.info e.getMessage()
+} finally {
+	sql.close()
+}
+</con:setupScript>
       <con:properties/>
     </con:testCase>
     <con:testCase failOnError="true" failTestCaseOnErrors="true" id="51326c4e-6223-4ce0-8578-0845aa037a51" keepSession="false" maxResults="0" name="insert_clob TestCase" searchProperties="true">
@@ -29175,28 +29181,27 @@ sql.execute('DELETE FROM qa_jdbc WHERE workingname = ?', workingName)</con:setup
             </con:settings>
             <con:encoding>UTF-8</con:encoding>
             <con:endpoint>http://${mwHubAddress}:${mwHubPort}/mediate/qa/run/protocol/Jdbc/insert</con:endpoint>
-            <con:request><![CDATA[
-              
-              <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ins="urn:megaware:/mediate/qa/run/protocol/Jdbc/insert/insert.wsdl">\r
+            <con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ins="urn:megaware:/mediate/qa/run/protocol/Jdbc/insert/insert.wsdl">\r
    <soap:Header/>\r
    <soap:Body>\r
       <ins:qa_jdbc>\r
          <!--1 or more repetitions:-->\r
          <item>\r
-            <workingName>${=request.testCase.name}</workingName><blob_data></blob_data>\r
-            <clob_data></clob_data>\r
+            <workingName>${=request.testCase.name}</workingName>\r
+            <blob_data/>\r
+            <clob_data/>\r
          </item>\r
          <!--Optional:-->\r
          <properties>\r
-            <databaseName>${#TestSuite#databaseName}</databaseName><sql>INSERT INTO qa_jdbc (workingname, blob_data) VALUES (?, ?)</sql>\r
+            <databaseName>${#TestSuite#databaseName}</databaseName>\r
+            <sql>INSERT INTO qa_jdbc (workingname, blob_data) VALUES (?, ?)</sql>\r
          </properties>\r
       </ins:qa_jdbc>\r
    </soap:Body>\r
 </soap:Envelope>]]></con:request>
             <con:assertion id="150fd2c0-554e-41fd-9640-e500c38cacff" name="SOAP Response" type="SOAP Response"/>
             <con:assertion id="47facb28-99c2-4bdd-af91-85db8f867fb3" name="blob_null Assertion" type="GroovyScriptAssertion">
-              <con:configuration>
-                <scriptText>import groovy.sql.Sql
+              <con:configuration><scriptText>import groovy.sql.Sql
 import java.sql.*
 import org.apache.commons.io.FileUtils
 
@@ -29211,12 +29216,20 @@ def workingName = messageExchange.modelItem.testCase.name
 
 def sql = Sql.newInstance(jdbcUrl, username, password, driverClassName) 
 
-java.sql.ResultSet rs = sql.executeQuery("SELECT blob_data FROM qa_jdbc WHERE workingname = '" + workingName + "'")
-rs.next()
-java.sql.Blob storedBlobFile = rs.getBlob('BLOB_DATA');
+java.sql.Blob storedBlobFile = null
 
-assert storedBlobFile == null</scriptText>
-              </con:configuration>
+try{
+	java.sql.ResultSet rs = sql.executeQuery("SELECT blob_data FROM qa_jdbc WHERE workingname = '" + workingName + "'")
+	rs.next()
+	storedBlobFile = rs.getBlob('BLOB_DATA');
+} catch(Exception e) {
+	e.getMessage()
+} finally {
+	sql.close()
+}
+
+assert storedBlobFile == null
+</scriptText></con:configuration>
             </con:assertion>
             <con:assertion id="29461f72-7c6f-4ee0-80b2-fbf03ce8c84d" name="result contains" type="Simple Contains">
               <con:configuration>
