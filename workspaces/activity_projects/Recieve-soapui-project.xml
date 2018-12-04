@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="6a3e3438-b986-47d9-84be-7d6654b22b43" activeEnvironment="Default" name="Recieve" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="d37b5113-9e2c-42e0-8390-c26b91bda58a" wsaVersion="NONE" name="SoapMockService" type="wsdl" bindingName="{urn:megaware:/mediate/qa/run/mockService/Rec_Rep/Rec_Rep.wsdl}Rec_RepSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="http://${mwHubAddress}:${mwHubPort}/mediate/qa/run/mockService/Rec_Rep?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://192.168.0.54:57720/mediate/qa/run/mockService/Rec_Rep?WSDL"><con:part><con:url>http://192.168.0.54:57720/mediate/qa/run/mockService/Rec_Rep?WSDL</con:url><con:content><![CDATA[<definitions targetNamespace="urn:megaware:/mediate/qa/run/mockService/Rec_Rep/Rec_Rep.wsdl" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:mw="http://www.mobicware.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="urn:megaware:/mediate/qa/run/mockService/Rec_Rep/Rec_Rep.wsdl" xmlns:wsa="http://www.w3.org/2005/08/addressing">
+  <types>
+    <s:schema targetNamespace="urn:megaware:/mediate/qa/run/mockService/Rec_Rep/Rec_Rep.wsdl">
+      <s:element mw:isEncrypt="no" name="message" type="s:string" xmlns:mw="http://www/mobicware.com"/>
+    </s:schema>
+  </types>
+  <message name="mock ReceiveInputMessage">
+    <part element="tns:message" name="mock ReceiveInput"/>
+  </message>
+  <message name="mock ReceiveOutputMessage">
+    <part element="tns:message" name="mock ReceiveOutput"/>
+  </message>
+  <portType name="Rec_RepPortType">
+    <operation name="mock Receive">
+      <input message="tns:mock ReceiveInputMessage" name="mock ReceiveInput"/>
+      <output message="tns:mock ReceiveOutputMessage" name="mock ReceiveOutput"/>
+    </operation>
+  </portType>
+  <binding name="Rec_RepSOAP12Binding" type="tns:Rec_RepPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="mock Receive">
+      <soap12:operation soapAction="/mediate/qa/run/mockService/Rec_Rep" style="document"/>
+      <input name="mock ReceiveInput">
+        <soap12:body use="literal"/>
+      </input>
+      <output name="mock ReceiveOutput">
+        <soap12:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="Rec_RepSOAP11Binding" type="tns:Rec_RepPortType">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="mock Receive">
+      <soap11:operation soapAction="/mediate/qa/run/mockService/Rec_Rep" style="document"/>
+      <input name="mock ReceiveInput">
+        <soap11:body use="literal"/>
+      </input>
+      <output name="mock ReceiveOutput">
+        <soap11:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="Rec_RepHTTPGETBinding" type="tns:Rec_RepPortType">
+    <http:binding verb="GET"/>
+    <operation name="mock Receive">
+      <http:operation location="/message"/>
+      <input name="mock ReceiveInput">
+        <http:urlEncoded/>
+      </input>
+      <output name="mock ReceiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="Rec_RepHTTPPOSTXMLBinding" type="tns:Rec_RepPortType">
+    <http:binding verb="POST"/>
+    <operation name="mock Receive">
+      <http:operation location="/message"/>
+      <input name="mock ReceiveInput">
+        <mime:content part="mock ReceiveInput" type="application/xml"/>
+      </input>
+      <output name="mock ReceiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="Rec_RepHTTPPOSTFORMBinding" type="tns:Rec_RepPortType">
+    <http:binding verb="POST"/>
+    <operation name="mock Receive">
+      <http:operation location="/message"/>
+      <input name="mock ReceiveInput">
+        <mime:content part="mock ReceiveInput" type="application/x-www-form-urlencoded"/>
+      </input>
+      <output name="mock ReceiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="Rec_RepHTTPPOSTJSONBinding" type="tns:Rec_RepPortType">
+    <http:binding verb="POST"/>
+    <operation name="mock Receive">
+      <http:operation location="/message"/>
+      <input name="mock ReceiveInput">
+        <mime:content part="mock ReceiveInput" type="application/json"/>
+      </input>
+      <output name="mock ReceiveOutput">
+        <mime:mimeXml part="Body"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="Rec_RepService">
+    <port binding="tns:Rec_RepSOAP12Binding" name="Rec_RepSOAP12BindingPort">
+      <soap12:address location="http://192.168.0.54:57720/mediate/qa/run/mockService/Rec_Rep"/>
+    </port>
+    <port binding="tns:Rec_RepSOAP11Binding" name="Rec_RepSOAP11BindingPort">
+      <soap11:address location="http://192.168.0.54:57720/mediate/qa/run/mockService/Rec_Rep"/>
+    </port>
+    <port binding="tns:Rec_RepHTTPGETBinding" name="Rec_RepHTTPGETBindingPort">
+      <http:address location="http://192.168.0.54:57720/mediate/qa/run/mockService/Rec_Rep"/>
+    </port>
+    <port binding="tns:Rec_RepHTTPPOSTXMLBinding" name="Rec_RepHTTPPOSTXMLBindingPort">
+      <http:address location="http://192.168.0.54:57720/mediate/qa/run/mockService/Rec_Rep"/>
+    </port>
+    <port binding="tns:Rec_RepHTTPPOSTFORMBinding" name="Rec_RepHTTPPOSTFORMBindingPort">
+      <http:address location="http://192.168.0.54:57720/mediate/qa/run/mockService/Rec_Rep"/>
+    </port>
+    <port binding="tns:Rec_RepHTTPPOSTJSONBinding" name="Rec_RepHTTPPOSTJSONBindingPort">
+      <http:address location="http://192.168.0.54:57720/mediate/qa/run/mockService/Rec_Rep"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://192.168.0.54:57720/mediate/qa/run/mockService/Rec_Rep</con:endpoint></con:endpoints><con:operation id="74fd1bbf-f2a1-4384-946b-33a1fe15b4bd" isOneWay="false" action="/mediate/qa/run/mockService/Rec_Rep" name="mock Receive" bindingOperationName="mock Receive" type="Request-Response" outputName="mock ReceiveOutput" inputName="mock ReceiveInput" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="61e44374-f02b-44d1-86f1-1ee3b74e3af3" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${mwHubAddress}:${mwHubPort}/mediate/qa/run/mockService/Rec_Rep</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:rec="urn:megaware:/mediate/qa/run/mockService/Rec_Rep/Rec_Rep.wsdl">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <rec:message>sample</rec:message>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/mockService/Rec_Rep/Rec_Rep.wsdl/Rec_RepPortType/mock ReceiveInput"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:RestService" id="55cf7ae1-24bb-4ed0-9553-aa8cec55c9e1" wadlVersion="http://wadl.dev.java.net/2009/02" name="Recieve" type="rest" basePath="/" definitionUrl="http://${mwHubAddress}:${mwHubPort}/mediate/qa/run/activity/Receive/json_flat?WADL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT"/><con:endpoints><con:endpoint>http://192.168.0.130:57720</con:endpoint></con:endpoints><con:resource name="mediate/qa/run/activity/Receive/json_flat/message" path="mediate/qa/run/activity/Receive/json_flat/message" id="6e57c23a-d022-4968-b95f-ebfa3d4da1db"><con:settings/><con:parameters/><con:method name="GET" id="a6e057e5-138b-4a1a-827f-7327f1bc9371" method="GET"><con:settings/><con:parameters><con:parameter><con:name>Optional</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter required="true"><con:name>Mandatory</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter></con:parameters><con:request name="Request 1" id="da4547de-b585-450a-ba82-e24bb75c9ef0" mediaType="application/json"><con:settings/><con:endpoint>http://192.168.0.130:57720</con:endpoint><con:parameters/></con:request></con:method><con:method name="POST" id="860b2dc8-9308-4eb8-a5b9-da120a761067" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xmlns:ns="http://wadl.dev.java.net/2009/02">ns:message</con:element><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" id="1637b982-1e9b-4aa2-960e-a937434deda8" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://${mwHubAddress}:${mwHubPort}</con:endpoint><con:request>{
+	"Mandatory": "",
+	"Optional": "",
+	"undefined_element": ""
+}</con:request><con:originalUri>http://192.168.0.130/mediate/qa/run/activity/Receive/json_flat/message</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:testSuite id="91b6235b-da84-4c52-962a-adfbf1394f47" name="Receive Soap TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="7cc4b96f-038f-46a3-8198-25cac887debc" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Soap Level1 Normal TestCase" searchProperties="true"><con:settings/><con:properties/></con:testCase><con:testCase id="bbdd61b2-fa3e-4408-83fa-e13d0d3b525a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Soap Level1 Null TestCase" searchProperties="true"><con:settings/><con:properties/></con:testCase><con:testCase id="f9ba21ce-8ef9-4a48-a4cf-34060bcacea3" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Soap Level1 Multiline TestCase" searchProperties="true"><con:settings/><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="0249cd94-c41b-473e-8a86-92554e9e13a9" name="Receive Get TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="b94f144a-b00a-4193-a1d1-3c80352fc991" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Get Level1 Normal TestCase" searchProperties="true"><con:settings/><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="66606357-175d-406e-9687-1b6becf4b5ef" name="Receive Json TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="006cbd37-9cce-442d-acec-4f118c821f25" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Http Json Leve1 Normal TestCase" searchProperties="true"><con:settings/><con:testStep type="mockresponse" name="mock Receive" id="991c1243-e589-4820-953d-488738a4ec1e"><con:settings/><con:config xsi:type="con:MockResponseStep" startStep="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapMockService</con:interface><con:operation>mock Receive</con:operation><con:path>mediate/qa/run/mockService/Rec_Rep</con:path><con:port>55000</con:port><con:response name="Response 1" id="bc89f9bc-910e-4086-9d65-7c200dea575d" httpResponseStatus="200" encoding="UTF-8" outgoingWss=""><con:settings/><con:script>def xml = new XmlParser(false, false).parseText(mockRequest.requestContent)
+def entry = xml.'**'.find{it.name().contains('Body')}.'*'.find{it.name() != null}
+def sw = new StringWriter()
+new XmlNodePrinter(new PrintWriter(sw)).print(entry)
+
+def xmlString = com.eviware.soapui.support.xml.XmlUtils.prettyPrintXml(sw.toString())
+
+requestContext.responseMessage = xmlString</con:script><con:responseContent>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:lev="urn:megaware:/mediate/qa/run/activity/Receive/Level1/Level1.wsdl">
+   &lt;soap:Header/>
+   &lt;soap:Body>
+      	${responseMessage}
+   &lt;/soap:Body>
+&lt;/soap:Envelope>
+</con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/mockService/Rec_Rep/Rec_Rep.wsdl/Rec_RepPortType/mock ReceiveOutput"/></con:response></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="525e2d7f-3e2b-48e9-8e37-16d3de8d9b70" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Json flat normal TestCase" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="POST - Request 1" id="a31af75d-d550-4e18-b4d4-2c8df31b6672"><con:settings/><con:config service="Recieve" resourcePath="/mediate/qa/run/activity/Receive/json_flat/message" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="POST - Request 1" id="1637b982-1e9b-4aa2-960e-a937434deda8" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://${mwHubAddress}:${mwHubPort}</con:endpoint><con:request>{
+	"Mandatory": "",
+	"Optional": "",
+	"undefined_element": ""
+}</con:request><con:originalUri>http://192.168.0.130/mediate/qa/run/activity/Receive/json_flat/message</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="mockresponse" name="mock Receive" id="4f941ac9-5bc4-447d-85a3-ac19125dda2f"><con:settings/><con:config xsi:type="con:MockResponseStep" startStep="POST - Request 1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SoapMockService</con:interface><con:operation>mock Receive</con:operation><con:path>/mediate/qa/run/mockService/Rec_Rep</con:path><con:port>55000</con:port><con:response name="Response 1" id="bc89f9bc-910e-4086-9d65-7c200dea575d" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:script>def xml = new XmlParser(false, false).parseText(mockRequest.requestContent)
+def entry = xml.'**'.find{it.name().contains('Body')}.'*'.find{it.name() != null}
+def sw = new StringWriter()
+new XmlNodePrinter(new PrintWriter(sw)).print(entry)
+
+def xmlString = com.eviware.soapui.support.xml.XmlUtils.prettyPrintXml(sw.toString())
+
+requestContext.responseMessage = xmlString</con:script><con:responseContent>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:lev="urn:megaware:/mediate/qa/run/activity/Receive/Level1/Level1.wsdl">
+   &lt;soap:Header/>
+   &lt;soap:Body>
+      	${responseMessage}
+   &lt;/soap:Body>
+&lt;/soap:Envelope>
+</con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/mockService/Rec_Rep/Rec_Rep.wsdl/Rec_RepPortType/mock ReceiveOutput"/></con:response></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:mockService id="dc7e3637-e881-4780-811c-7f9560703dfb" port="55000" path="/mediate/qa/run/mockService/Rec_Rep" host="192.168.0.130" name="SoapMockService" bindToHostOnly="false" docroot=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="mock Receive" id="a4e421b3-f626-4cef-a318-61b3bf08f82f" interface="SoapMockService" operation="mock Receive"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="bc89f9bc-910e-4086-9d65-7c200dea575d" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:script>def xml = new XmlParser(false, false).parseText(mockRequest.requestContent)
+def entry = xml.'**'.find{it.name().contains('Body')}.'*'.find{it.name() != null}
+def sw = new StringWriter()
+new XmlNodePrinter(new PrintWriter(sw)).print(entry)
+
+def xmlString = com.eviware.soapui.support.xml.XmlUtils.prettyPrintXml(sw.toString())
+
+requestContext.responseMessage = xmlString</con:script><con:responseContent>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:lev="urn:megaware:/mediate/qa/run/activity/Receive/Level1/Level1.wsdl">
+   &lt;soap:Header/>
+   &lt;soap:Body>
+      	${responseMessage}
+   &lt;/soap:Body>
+&lt;/soap:Envelope>
+</con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/mockService/Rec_Rep/Rec_Rep.wsdl/Rec_RepPortType/mock ReceiveOutput"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
