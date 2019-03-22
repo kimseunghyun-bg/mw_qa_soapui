@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-workspace name="Protocol" soapui-version="5.4.0" projectRoot="${workspaceDir}" xmlns:con="http://eviware.com/soapui/config">
+<con:soapui-workspace name="Protocol" soapui-version="5.5.0" projectRoot="${workspaceDir}" xmlns:con="http://eviware.com/soapui/config">
   <con:description/>
   <con:settings/>
   <con:project name="Soap">protocol_projects/Soap-soapui-project.xml</con:project>
   <con:project name="Http">protocol_projects/Http-soapui-project.xml</con:project>
   <con:project name="Java">protocol_projects/Java-soapui-project.xml</con:project>
   <con:project name="Jdbc">protocol_projects/Jdbc-soapui-project.xml</con:project>
-  <con:project name="null_LOB">../../../../null-LOB-soapui-project.xml</con:project>
   <con:project name="File">protocol_projects/File-soapui-project.xml</con:project>
   <con:collectInfoForSupport>false</con:collectInfoForSupport>
 </con:soapui-workspace>
