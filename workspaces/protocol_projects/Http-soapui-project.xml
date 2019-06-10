@@ -1,372 +1,218 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="49d890c1-4966-4873-bec4-9785f943bce4" activeEnvironment="Default" name="Http" resourceRoot="${projectDir}" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="281307ff-5cd0-4384-916c-1c7f510d9cb2" wsaVersion="NONE" name="address" type="wsdl" bindingName="{urn:megaware:/mediate/qa/run/protocol/Http/address/address.wsdl}addressSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="http://${basicAddress}/mediate/qa/run/protocol/Http/address?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://192.168.0.130:57720/mediate/qa/run/protocol/Http/address?WSDL"><con:part><con:url>http://192.168.0.130:57720/mediate/qa/run/protocol/Http/address?WSDL</con:url><con:content><![CDATA[<definitions targetNamespace="urn:megaware:/mediate/qa/run/protocol/Http/address/address.wsdl" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:mw="http://www.mobicware.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="urn:megaware:/mediate/qa/run/protocol/Http/address/address.wsdl" xmlns:wsa="http://www.w3.org/2005/08/addressing">
-  <types>
-    <s:schema targetNamespace="urn:megaware:/mediate/qa/run/protocol/Http/address/address.wsdl">
-      <s:element mw:isEncrypt="no" mw:tableName="TAX" name="TAX">
+<con:soapui-project id="8db051ce-1dc7-4b60-b891-fbcf9527870b" activeEnvironment="Default" name="Http" resourceRoot="${projectDir}" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="c4738506-864f-472c-a882-1c565e00658a" wadlVersion="http://wadl.dev.java.net/2009/02" name="HttpHeader" type="rest" basePath="/" definitionUrl="http://127.0.0.1:57720/mediate/qa/run/protocol/Http/httpHeader?wadl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://127.0.0.1:57720/mediate/qa/run/protocol/Http/httpHeader?wadl"><con:part><con:url>http://127.0.0.1:57720/mediate/qa/run/protocol/Http/httpHeader?wadl</con:url><con:content><![CDATA[<application xmlns="http://wadl.dev.java.net/2009/02" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:megaware:/mediate/qa/run/protocol/Http/httpHeader/httpHeader.wadl">
+  <grammars>
+    <s:schema targetNamespace="urn:megaware:/mediate/qa/run/protocol/Http/httpHeader/httpHeader.wadl" xmlns:mw="http://www.mobicware.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <s:element mw:isEncrypt="no" name="request" xmlns:mw="http://www/mobicware.com">
         <s:complexType>
           <s:sequence>
-            <s:element maxOccurs="unbounded" minOccurs="0" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="item">
-              <s:complexType>
-                <s:sequence>
-                  <s:element default="manual" maxOccurs="1" minOccurs="0" mw:column="NAME" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="NAME" type="s:string"/>
-                  <s:element default="123456-1234567" maxOccurs="1" minOccurs="0" mw:column="RRL" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="RRL" type="s:string"/>
-                  <s:element default="99" maxOccurs="1" minOccurs="0" mw:column="TAX01" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="2" mw:preamble="" name="TAX01" type="s:string"/>
-                  <s:element default="98" maxOccurs="1" minOccurs="0" mw:column="TAX02" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="2" mw:preamble="" name="TAX02" type="s:string"/>
-                  <s:element default="01" maxOccurs="1" minOccurs="0" mw:column="ADDRCD" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="50" mw:preamble="" name="ADDRCD" type="s:string"/>
-                  <s:element default="-500 won" maxOccurs="1" minOccurs="0" mw:column="TAXPAY" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="TAXPAY" type="s:string"/>
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element mw:isEncrypt="no" name="result">
-        <s:complexType>
-          <s:sequence>
-            <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="manual">
-              <s:complexType>
-                <s:sequence>
-                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="TAX">
-                    <s:complexType>
-                      <s:sequence>
-                        <s:element maxOccurs="unbounded" minOccurs="0" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="item">
-                          <s:complexType>
-                            <s:sequence>
-                              <s:element maxOccurs="1" minOccurs="0" mw:column="NAME" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="NAME" type="s:string"/>
-                              <s:element maxOccurs="1" minOccurs="0" mw:column="RRL" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="RRL" type="s:string"/>
-                              <s:element maxOccurs="1" minOccurs="0" mw:column="TAX01" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="2" mw:preamble="" name="TAX01" type="s:string"/>
-                              <s:element maxOccurs="1" minOccurs="0" mw:column="TAX02" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="2" mw:preamble="" name="TAX02" type="s:string"/>
-                              <s:element maxOccurs="1" minOccurs="0" mw:column="ADDRCD" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="50" mw:preamble="" name="ADDRCD" type="s:string"/>
-                              <s:element maxOccurs="1" minOccurs="0" mw:column="TAXPAY" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="TAXPAY" type="s:string"/>
-                            </s:sequence>
-                          </s:complexType>
-                        </s:element>
-                      </s:sequence>
-                    </s:complexType>
-                  </s:element>
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-            <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="metadata">
-              <s:complexType>
-                <s:sequence>
-                  <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="TAX">
-                    <s:complexType>
-                      <s:sequence>
-                        <s:element maxOccurs="unbounded" minOccurs="0" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="item">
-                          <s:complexType>
-                            <s:sequence>
-                              <s:element maxOccurs="1" minOccurs="0" mw:column="NAME" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="NAME" type="s:string"/>
-                              <s:element maxOccurs="1" minOccurs="0" mw:column="RRL" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="RRL" type="s:string"/>
-                              <s:element maxOccurs="1" minOccurs="0" mw:column="TAX01" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="2" mw:preamble="" name="TAX01" type="s:string"/>
-                              <s:element maxOccurs="1" minOccurs="0" mw:column="TAX02" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="2" mw:preamble="" name="TAX02" type="s:string"/>
-                              <s:element maxOccurs="1" minOccurs="0" mw:column="ADDRCD" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="50" mw:preamble="" name="ADDRCD" type="s:string"/>
-                              <s:element maxOccurs="1" minOccurs="0" mw:column="TAXPAY" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="TAXPAY" type="s:string"/>
-                            </s:sequence>
-                          </s:complexType>
-                        </s:element>
-                      </s:sequence>
-                    </s:complexType>
-                  </s:element>
-                </s:sequence>
-              </s:complexType>
-            </s:element>
+            <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="name" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="body" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="0" mw:preamble="" name="headerType" type="s:string"/>
           </s:sequence>
         </s:complexType>
       </s:element>
     </s:schema>
-  </types>
-  <message name="receiveInputMessage">
-    <part element="tns:TAX" name="receiveInput"/>
-  </message>
-  <message name="receiveOutputMessage">
-    <part element="tns:result" name="receiveOutput"/>
-  </message>
-  <portType name="addressPortType">
-    <operation name="receive">
-      <input message="tns:receiveInputMessage" name="receiveInput"/>
-      <output message="tns:receiveOutputMessage" name="receiveOutput"/>
-    </operation>
-  </portType>
-  <binding name="addressSOAP12Binding" type="tns:addressPortType">
-    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
-    <operation name="receive">
-      <soap12:operation soapAction="/mediate/qa/run/protocol/Http/address" style="document"/>
-      <input name="receiveInput">
-        <soap12:body use="literal"/>
-      </input>
-      <output name="receiveOutput">
-        <soap12:body use="literal"/>
-      </output>
-    </operation>
-  </binding>
-  <binding name="addressSOAP11Binding" type="tns:addressPortType">
-    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http"/>
-    <operation name="receive">
-      <soap11:operation soapAction="/mediate/qa/run/protocol/Http/address" style="document"/>
-      <input name="receiveInput">
-        <soap11:body use="literal"/>
-      </input>
-      <output name="receiveOutput">
-        <soap11:body use="literal"/>
-      </output>
-    </operation>
-  </binding>
-  <binding name="addressHTTPGETBinding" type="tns:addressPortType">
-    <http:binding verb="GET"/>
-    <operation name="receive">
-      <http:operation location="/TAX"/>
-      <input name="receiveInput">
-        <http:urlEncoded/>
-      </input>
-      <output name="receiveOutput">
-        <mime:mimeXml part="Body"/>
-      </output>
-    </operation>
-  </binding>
-  <binding name="addressHTTPPOSTXMLBinding" type="tns:addressPortType">
-    <http:binding verb="POST"/>
-    <operation name="receive">
-      <http:operation location="/TAX"/>
-      <input name="receiveInput">
-        <mime:content part="receiveInput" type="application/xml"/>
-      </input>
-      <output name="receiveOutput">
-        <mime:mimeXml part="Body"/>
-      </output>
-    </operation>
-  </binding>
-  <binding name="addressHTTPPOSTFORMBinding" type="tns:addressPortType">
-    <http:binding verb="POST"/>
-    <operation name="receive">
-      <http:operation location="/TAX"/>
-      <input name="receiveInput">
-        <mime:content part="receiveInput" type="application/x-www-form-urlencoded"/>
-      </input>
-      <output name="receiveOutput">
-        <mime:mimeXml part="Body"/>
-      </output>
-    </operation>
-  </binding>
-  <binding name="addressHTTPPOSTJSONBinding" type="tns:addressPortType">
-    <http:binding verb="POST"/>
-    <operation name="receive">
-      <http:operation location="/TAX"/>
-      <input name="receiveInput">
-        <mime:content part="receiveInput" type="application/json"/>
-      </input>
-      <output name="receiveOutput">
-        <mime:mimeXml part="Body"/>
-      </output>
-    </operation>
-  </binding>
-  <service name="addressService">
-    <port binding="tns:addressSOAP12Binding" name="addressSOAP12BindingPort">
-      <soap12:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Http/address"/>
-    </port>
-    <port binding="tns:addressSOAP11Binding" name="addressSOAP11BindingPort">
-      <soap11:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Http/address"/>
-    </port>
-    <port binding="tns:addressHTTPGETBinding" name="addressHTTPGETBindingPort">
-      <http:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Http/address"/>
-    </port>
-    <port binding="tns:addressHTTPPOSTXMLBinding" name="addressHTTPPOSTXMLBindingPort">
-      <http:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Http/address"/>
-    </port>
-    <port binding="tns:addressHTTPPOSTFORMBinding" name="addressHTTPPOSTFORMBindingPort">
-      <http:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Http/address"/>
-    </port>
-    <port binding="tns:addressHTTPPOSTJSONBinding" name="addressHTTPPOSTJSONBindingPort">
-      <http:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Http/address"/>
-    </port>
-  </service>
-</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://192.168.0.130:57720/mediate/qa/run/protocol/Http/address</con:endpoint></con:endpoints><con:operation id="55c8cf88-9897-462e-85a5-b5bfc6722718" isOneWay="false" action="/mediate/qa/run/protocol/Http/address" name="receive" bindingOperationName="receive" type="Request-Response" outputName="receiveOutput" inputName="receiveInput" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6296dad4-0a38-486a-b1c0-dacf56b9bc1b" name="address"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/protocol/Http/address</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:add="urn:megaware:/mediate/qa/run/protocol/Http/address/address.wsdl">\r
-   <soap:Header/>\r
-   <soap:Body>\r
-      <add:TAX>\r
-         <!--Zero or more repetitions:-->\r
-         <item>\r
-            <!--Optional:-->\r
-            <NAME>manual</NAME>\r
-            <!--Optional:-->\r
-            <RRL>123456-1234567</RRL>\r
-            <!--Optional:-->\r
-            <TAX01>99</TAX01>\r
-            <!--Optional:-->\r
-            <TAX02>98</TAX02>\r
-            <!--Optional:-->\r
-            <ADDRCD>01</ADDRCD>\r
-            <!--Optional:-->\r
-            <TAXPAY>-500 won</TAXPAY>\r
-         </item>\r
-      </add:TAX>\r
-   </soap:Body>\r
-</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/protocol/Http/address/address.wsdl/addressPortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="799d3442-6003-4aba-9ac9-7f2f508bed0c" wsaVersion="NONE" name="method" type="wsdl" bindingName="{urn:megaware:/mediate/qa/run/protocol/Http/method/method.wsdl}methodSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="http://${basicAddress}/mediate/qa/run/protocol/Http/method?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://192.168.0.130:57720/mediate/qa/run/protocol/Http/method</con:endpoint></con:endpoints><con:operation id="f1cf5dbd-2b2f-4523-b042-d54c65e22fa8" isOneWay="false" action="/mediate/qa/run/protocol/Http/method" name="receive" bindingOperationName="receive" type="Request-Response" outputName="receiveOutput" inputName="receiveInput" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3f899551-a054-446c-a6c1-69acb9e8965b" name="method"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/protocol/Http/method</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:met="urn:megaware:/mediate/qa/run/protocol/Http/method/method.wsdl">\r
-   <soap:Header/>\r
-   <soap:Body>\r
-      <met:TAX>\r
-         <!--Zero or more repetitions:-->\r
-         <item>\r
-            <!--Optional:-->\r
-            <NAME>post</NAME>\r
-            <!--Optional:-->\r
-            <RRL>123456-1234567</RRL>\r
-            <!--Optional:-->\r
-            <TAX01>99</TAX01>\r
-            <!--Optional:-->\r
-            <TAX02>98</TAX02>\r
-            <!--Optional:-->\r
-            <ADDRCD>01</ADDRCD>\r
-            <!--Optional:-->\r
-            <TAXPAY>-500 won</TAXPAY>\r
-         </item>\r
-      </met:TAX>\r
-   </soap:Body>\r
-</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/protocol/Http/method/method.wsdl/methodPortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="68a4e2e5-3a2e-461c-8031-11cb5ca5e3c9" wsaVersion="NONE" name="encType" type="wsdl" bindingName="{urn:megaware:/mediate/qa/run/protocol/Http/encType/encType.wsdl}encTypeSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="http://${basicAddress}/mediate/qa/run/protocol/Http/encType?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://192.168.0.130:57720/mediate/qa/run/protocol/Http/encType</con:endpoint></con:endpoints><con:operation id="312bcf06-aae8-45ce-8498-72cb04785c2a" isOneWay="false" action="/mediate/qa/run/protocol/Http/encType" name="receive" bindingOperationName="receive" type="Request-Response" outputName="receiveOutput" inputName="receiveInput" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="86bee04e-c51f-429f-b9db-8e1947f7e3bd" name="encType"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/protocol/Http/encType</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:enc="urn:megaware:/mediate/qa/run/protocol/Http/encType/encType.wsdl">\r
-   <soap:Header/>\r
-   <soap:Body>\r
-      <enc:TAX>\r
-         <!--Zero or more repetitions:-->\r
-         <item>\r
-            <!--Optional:-->\r
-            <NAME>xml</NAME>\r
-            <!--Optional:-->\r
-            <RRL>123456-1234567</RRL>\r
-            <!--Optional:-->\r
-            <TAX01>99</TAX01>\r
-            <!--Optional:-->\r
-            <TAX02>98</TAX02>\r
-            <!--Optional:-->\r
-            <ADDRCD>01</ADDRCD>\r
-            <!--Optional:-->\r
-            <TAXPAY>-500 won</TAXPAY>\r
-         </item>\r
-      </enc:TAX>\r
-   </soap:Body>\r
-</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/protocol/Http/encType/encType.wsdl/encTypePortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="3533103e-3c0d-4ac4-b4aa-92ebe683cbe3" wsaVersion="NONE" name="httpVersion" type="wsdl" bindingName="{urn:megaware:/mediate/qa/run/protocol/Http/httpVersion/httpVersion.wsdl}httpVersionSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="http://${basicAddress}/mediate/qa/run/protocol/Http/httpVersion?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://192.168.0.130:57720/mediate/qa/run/protocol/Http/httpVersion?WSDL"><con:part><con:url>http://192.168.0.130:57720/mediate/qa/run/protocol/Http/httpVersion?WSDL</con:url><con:content><![CDATA[<definitions targetNamespace="urn:megaware:/mediate/qa/run/protocol/Http/httpVersion/httpVersion.wsdl" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:mw="http://www.mobicware.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="urn:megaware:/mediate/qa/run/protocol/Http/httpVersion/httpVersion.wsdl" xmlns:wsa="http://www.w3.org/2005/08/addressing">
-  <types>
-    <s:schema targetNamespace="urn:megaware:/mediate/qa/run/protocol/Http/httpVersion/httpVersion.wsdl">
-      <s:element mw:isEncrypt="no" mw:tableName="TAX" name="TAX">
-        <s:complexType>
-          <s:sequence>
-            <s:element maxOccurs="unbounded" minOccurs="0" mw:column="" mw:delimiter="" mw:encoding="Plain" mw:isCondition="no" mw:isEncrypt="no" mw:preamble="" mw:tableName="" name="item">
-              <s:complexType>
-                <s:sequence>
-                  <s:element default="http10" maxOccurs="1" minOccurs="0" mw:column="NAME" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="NAME" type="s:string"/>
-                  <s:element default="123456-1234567" maxOccurs="1" minOccurs="0" mw:column="RRL" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="RRL" type="s:string"/>
-                  <s:element default="99" maxOccurs="1" minOccurs="0" mw:column="TAX01" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="2" mw:preamble="" name="TAX01" type="s:string"/>
-                  <s:element default="98" maxOccurs="1" minOccurs="0" mw:column="TAX02" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="2" mw:preamble="" name="TAX02" type="s:string"/>
-                  <s:element default="01" maxOccurs="1" minOccurs="0" mw:column="ADDRCD" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="50" mw:preamble="" name="ADDRCD" type="s:string"/>
-                  <s:element default="-500 won" maxOccurs="1" minOccurs="0" mw:column="TAXPAY" mw:delimiter="" mw:encoding="Plain" mw:function="" mw:isCondition="no" mw:isEncrypt="no" mw:length="20" mw:preamble="" name="TAXPAY" type="s:string"/>
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-    </s:schema>
-  </types>
-  <message name="receiveInputMessage">
-    <part element="tns:TAX" name="receiveInput"/>
-  </message>
-  <portType name="httpVersionPortType">
-    <operation name="receive">
-      <input message="tns:receiveInputMessage" name="receiveInput"/>
-    </operation>
-  </portType>
-  <binding name="httpVersionSOAP12Binding" type="tns:httpVersionPortType">
-    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
-    <operation name="receive">
-      <soap12:operation soapAction="/mediate/qa/run/protocol/Http/httpVersion" style="document"/>
-      <input name="receiveInput">
-        <soap12:body use="literal"/>
-      </input>
-    </operation>
-  </binding>
-  <binding name="httpVersionSOAP11Binding" type="tns:httpVersionPortType">
-    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http"/>
-    <operation name="receive">
-      <soap11:operation soapAction="/mediate/qa/run/protocol/Http/httpVersion" style="document"/>
-      <input name="receiveInput">
-        <soap11:body use="literal"/>
-      </input>
-    </operation>
-  </binding>
-  <binding name="httpVersionHTTPGETBinding" type="tns:httpVersionPortType">
-    <http:binding verb="GET"/>
-    <operation name="receive">
-      <http:operation location="/TAX"/>
-      <input name="receiveInput">
-        <http:urlEncoded/>
-      </input>
-    </operation>
-  </binding>
-  <binding name="httpVersionHTTPPOSTXMLBinding" type="tns:httpVersionPortType">
-    <http:binding verb="POST"/>
-    <operation name="receive">
-      <http:operation location="/TAX"/>
-      <input name="receiveInput">
-        <mime:content part="receiveInput" type="application/xml"/>
-      </input>
-    </operation>
-  </binding>
-  <binding name="httpVersionHTTPPOSTFORMBinding" type="tns:httpVersionPortType">
-    <http:binding verb="POST"/>
-    <operation name="receive">
-      <http:operation location="/TAX"/>
-      <input name="receiveInput">
-        <mime:content part="receiveInput" type="application/x-www-form-urlencoded"/>
-      </input>
-    </operation>
-  </binding>
-  <binding name="httpVersionHTTPPOSTJSONBinding" type="tns:httpVersionPortType">
-    <http:binding verb="POST"/>
-    <operation name="receive">
-      <http:operation location="/TAX"/>
-      <input name="receiveInput">
-        <mime:content part="receiveInput" type="application/json"/>
-      </input>
-    </operation>
-  </binding>
-  <service name="httpVersionService">
-    <port binding="tns:httpVersionSOAP12Binding" name="httpVersionSOAP12BindingPort">
-      <soap12:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Http/httpVersion"/>
-    </port>
-    <port binding="tns:httpVersionSOAP11Binding" name="httpVersionSOAP11BindingPort">
-      <soap11:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Http/httpVersion"/>
-    </port>
-    <port binding="tns:httpVersionHTTPGETBinding" name="httpVersionHTTPGETBindingPort">
-      <http:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Http/httpVersion"/>
-    </port>
-    <port binding="tns:httpVersionHTTPPOSTXMLBinding" name="httpVersionHTTPPOSTXMLBindingPort">
-      <http:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Http/httpVersion"/>
-    </port>
-    <port binding="tns:httpVersionHTTPPOSTFORMBinding" name="httpVersionHTTPPOSTFORMBindingPort">
-      <http:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Http/httpVersion"/>
-    </port>
-    <port binding="tns:httpVersionHTTPPOSTJSONBinding" name="httpVersionHTTPPOSTJSONBindingPort">
-      <http:address location="http://192.168.0.130:57720/mediate/qa/run/protocol/Http/httpVersion"/>
-    </port>
-  </service>
-</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://192.168.0.130:57720/mediate/qa/run/protocol/Http/httpVersion</con:endpoint></con:endpoints><con:operation id="2977ec32-5915-4299-9925-aa9f4f1ea9a9" isOneWay="false" action="/mediate/qa/run/protocol/Http/httpVersion" name="receive" bindingOperationName="receive" type="One-Way" inputName="receiveInput" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="88e2eaea-5116-425e-8356-c66d62e6b671" name="httpVersion"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${basicAddress}/mediate/qa/run/protocol/Http/httpVersion</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:htt="urn:megaware:/mediate/qa/run/protocol/Http/httpVersion/httpVersion.wsdl">\r
-   <soap:Header/>\r
-   <soap:Body>\r
-      <htt:TAX>\r
-         <!--Zero or more repetitions:-->\r
-         <item>\r
-            <!--Optional:-->\r
-            <NAME>http10</NAME>\r
-            <!--Optional:-->\r
-            <RRL>123456-1234567</RRL>\r
-            <!--Optional:-->\r
-            <TAX01>99</TAX01>\r
-            <!--Optional:-->\r
-            <TAX02>98</TAX02>\r
-            <!--Optional:-->\r
-            <ADDRCD>01</ADDRCD>\r
-            <!--Optional:-->\r
-            <TAXPAY>-500 won</TAXPAY>\r
-         </item>\r
-      </htt:TAX>\r
-   </soap:Body>\r
-</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:megaware:/mediate/qa/run/protocol/Http/httpVersion/httpVersion.wsdl/httpVersionPortType/receiveInput"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+  </grammars>
+  <resources base="http://127.0.0.1:57720/">
+    <resource path="mediate/qa/run/protocol/Http/httpHeader">
+      <method name="POST">
+        <request>
+          <representation element="request" mediaType="application/xml"/>
+        </request>
+        <response status="200">
+          <representation element="request" mediaType="application/xml"/>
+        </response>
+      </method>
+    </resource>
+    <resource path="mediate/qa/run/protocol/Http/httpHeader/request">
+      <method name="GET">
+        <request>
+          <param name="name" required="true" style="query" type="s:string"/>
+          <param name="body" required="true" style="query" type="s:string"/>
+          <param name="headerType" required="true" style="query" type="s:string"/>
+        </request>
+        <response status="200">
+          <representation element="request" mediaType="application/xml"/>
+        </response>
+      </method>
+      <method name="POST">
+        <request>
+          <representation element="request" mediaType="application/json"/>
+        </request>
+        <response status="200">
+          <representation element="request" mediaType="application/json"/>
+        </response>
+      </method>
+    </resource>
+  </resources>
+</application>]]></con:content><con:type>http://wadl.dev.java.net/2009/02</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://127.0.0.1:57720</con:endpoint></con:endpoints><con:resource name="mediate/qa/run/protocol/Http/httpHeader/request" path="mediate/qa/run/protocol/Http/httpHeader/request" id="dd5f8115-7b88-4480-ad32-8be4754f0fb9"><con:settings/><con:parameters/><con:method name="GET" id="e34d3b48-ea83-47f9-aa44-2d27efae671d" method="GET"><con:settings/><con:parameters><con:parameter required="true"><con:name>name</con:name><con:value>test</con:value><con:style>QUERY</con:style><con:default>test</con:default></con:parameter><con:parameter required="true"><con:name>body</con:name><con:value/><con:style>QUERY</con:style><con:default/></con:parameter><con:parameter required="true"><con:name>headerType</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter></con:parameters><con:representation type="RESPONSE" id=""><con:mediaType>application/xml</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:ns="http://wadl.dev.java.net/2009/02">ns:response</con:element><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" id="a7f0a5d4-fd73-4d19-9718-7ce377c6f0d1" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://127.0.0.1:57720</con:endpoint><con:request/><con:originalUri>http://127.0.0.1/mediate/qa/run/protocol/Http/httpHeader/request</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="headerType" value="GET"/>
+  <con:entry key="body" value="test"/>
+</con:parameters></con:request></con:method><con:method name="POST" id="e3271b1c-247c-4f74-83e6-3418ba784e67" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xmlns:ns="http://wadl.dev.java.net/2009/02">ns:request</con:element><con:description xsi:nil="true"/></con:representation><con:representation type="RESPONSE" id=""><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:ns="http://wadl.dev.java.net/2009/02">ns:response</con:element><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" id="46d95df5-79aa-46c7-bd97-922fdc5ac1ed" mediaType="application/xml" postQueryString="false" timeout=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@bind_address"/></con:settings><con:endpoint>http://127.0.0.1:57720</con:endpoint><con:request><![CDATA[<request>
+	<name>1111</name>
+	<body>2222</body>
+	<headerType>1.0</headerType>
+</request>]]></con:request><con:originalUri>http://127.0.0.1/mediate/qa/run/protocol/Http/httpHeader/request</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:testSuite id="377780f6-1d3f-4334-99f8-1f9669e54d38" name="httpHeader TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="96068dd0-6c46-4bbf-8d71-7ee6bda2c785" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="http GET TestCase" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="GET - Request 1" id="a078a015-8cba-479d-a49b-38941c5a0960"><con:settings/><con:config service="HttpHeader" resourcePath="/mediate/qa/run/protocol/Http/httpHeader/request" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GET - Request 1" id="a7f0a5d4-fd73-4d19-9718-7ce377c6f0d1" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://127.0.0.1:57720</con:endpoint><con:request/><con:originalUri>http://127.0.0.1/mediate/qa/run/protocol/Http/httpHeader/request</con:originalUri><con:assertion type="XPath Match" id="53c0f25b-225f-4058-affe-bbec208040bc" name="XPath Match"><con:configuration><path>//headerType</path><content>GET</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="headerType" value="GET"/>
+  <con:entry key="body" value="test"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="1a548995-ed4f-4bc9-ace5-4d7ff0e4c768" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="http POST TestCase" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="POST - Request 1" id="0ca0f2e3-6663-493c-a2f1-b9379103c5f8"><con:settings/><con:config service="HttpHeader" resourcePath="/mediate/qa/run/protocol/Http/httpHeader/request" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="POST - Request 1" id="46d95df5-79aa-46c7-bd97-922fdc5ac1ed" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://127.0.0.1:57720</con:endpoint><con:request><![CDATA[<request>
+	<name>1111</name>
+	<body>2222</body>
+	<headerType>POST</headerType>
+</request>]]></con:request><con:originalUri>http://127.0.0.1/mediate/qa/run/protocol/Http/httpHeader/request</con:originalUri><con:assertion type="XPath Match" id="f0faaa83-5909-40dc-adbc-54663bd809f7" name="XPath Match"><con:configuration><path>//headerType</path><content>POST</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="931839b8-9693-4c90-bbc8-cf894cc3776f" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="http 1.0 TestCase" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="1.0 - Request 1" id="deb7dd6f-4857-468c-93d0-c4892b04e1d9"><con:settings/><con:config service="HttpHeader" resourcePath="/mediate/qa/run/protocol/Http/httpHeader/request" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="1.0 - Request 1" id="46d95df5-79aa-46c7-bd97-922fdc5ac1ed" mediaType="application/xml" postQueryString="false" timeout=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@bind_address"/></con:settings><con:endpoint>http://127.0.0.1:57720</con:endpoint><con:request><![CDATA[<request>
+	<name></name>
+	<body></body>
+	<headerType>1.0</headerType>
+</request>]]></con:request><con:originalUri>http://127.0.0.1/mediate/qa/run/protocol/Http/httpHeader/request</con:originalUri><con:assertion type="XPath Match" id="ed2a0612-f187-4ce9-9eb6-c793d2502519" name="XPath Match"><con:configuration><path>//headerType</path><content>HTTP/1.0</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="a0c58935-2817-4546-9631-ad79d2f392b8" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="http 1.1 TestCase" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="1.1 - Request 1" id="adb1b4c5-6d56-4276-bda8-ff2bdac6a740"><con:settings/><con:config service="HttpHeader" resourcePath="/mediate/qa/run/protocol/Http/httpHeader/request" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="1.1 - Request 1" id="46d95df5-79aa-46c7-bd97-922fdc5ac1ed" mediaType="application/xml" postQueryString="false" timeout=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@bind_address"/></con:settings><con:endpoint>http://127.0.0.1:57720</con:endpoint><con:request><![CDATA[<request>
+	<name></name>
+	<body></body>
+	<headerType>1.1</headerType>
+</request>]]></con:request><con:originalUri>http://127.0.0.1/mediate/qa/run/protocol/Http/httpHeader/request</con:originalUri><con:assertion type="XPath Match" id="4dabc6a2-dab9-46c5-b035-27312574c0bf" name="XPath Match"><con:configuration><path>//headerType</path><content>HTTP/1.1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:restMockService id="6de5181d-f524-4afb-9c46-5f28f7c72b98" port="55000" path="/" host="localhost" name="httpHeader REST MockService" docroot=""><con:settings/><con:properties/><con:onRequestScript>//def acceptEncodingHeaderList = mockRequest.getRequestHeaders()
+//log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList
+//
+def httpRequest = mockRequest.getHttpRequest()
+log.info "httpRequest: " + httpRequest
+
+def httpResponse = mockRequest.getHttpResponse()
+log.info "httpResponse: " + httpResponse
+
+//def getProtocol = mockRequest.getProtocol()
+//log.info "getProtocol: " + getProtocol
+//
+//def getMethod = mockRequest.getMethod()
+//log.info "getMethod: " + getMethod
+//
+//def getRequestContent = mockRequest.getRequestContent()
+//log.info "getRequestContent: " + getRequestContent
+//
+//def xml = new XmlParser().parseText(mockRequest.requestContent)
+//log.info(xml.headerType.text())
+</con:onRequestScript><con:restMockAction name="/mediate/qa/run/protocol/Http/httpHeaderMock" method="GET" resourcePath="/mediate/qa/run/protocol/Http/httpHeaderMock" id="cc171987-2b75-44ca-bbfb-6dd9db2f6ea5"><con:settings/><con:defaultResponse xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*
+// Script dispatcher is used to select a response based on the incoming request.
+// Here are few examples showing how to match based on path, query param, header and body
+
+// Match based on path
+def requestPath = mockRequest.getPath()
+log.info "Path: "+ requestPath
+
+if( requestPath.contains("json") )
+{
+    // return the name of the response you want to dispatch
+    return "JSON Response"
+}
+
+
+// Match based on query parameter
+def queryString = mockRequest.getRequest().getQueryString()
+log.info "QueryString: " + queryString
+
+if( queryString.contains("stockholm") )
+{
+    // return the name of the response you want to dispatch
+    return "Response Stockholm"
+}
+else if( queryString.contains("london") )
+{
+    // return the name of the response you want to dispatch
+    return "Response London"
+}
+
+
+// Match based on header
+def acceptEncodingHeaderList = mockRequest.getRequestHeaders().get("Accept-Encoding")
+log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList
+
+if( acceptEncodingHeaderList.contains("gzip,deflate") )
+{
+    // return the name of the response you want to dispatch
+    return "GZiped Response"
+}
+
+
+// Match based on body
+def requestBody = mockRequest.getRequestContent()
+log.info "Request body: " + requestBody
+
+if( requestBody.contains("some data") )
+{
+    // return the name of the response you want to dispatch
+    return "Response N"
+}
+*/
+</con:dispatchPath><con:response name="Response 1" id="489fd0c7-3d94-41ee-bf2b-7265aa63842b" httpResponseStatus="200"><con:settings/><con:script>requestContext.name = 'name'
+requestContext.body = 'body'
+requestContext.headerType = mockRequest.getMethod()</con:script><con:responseContent><![CDATA[<request>
+   <name>${name}</name>
+   <body>${body}</body>
+   <headerType>${headerType}</headerType>
+</request>]]></con:responseContent></con:response></con:restMockAction><con:restMockAction name="/mediate/qa/run/protocol/Http/httpHeaderMock" method="POST" resourcePath="/mediate/qa/run/protocol/Http/httpHeaderMock" id="375a47cf-1d86-4b81-ae1b-cc35e56d8730"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>/*
+// Script dispatcher is used to select a response based on the incoming request.
+// Here are few examples showing how to match based on path, query param, header and body
+
+// Match based on path
+def requestPath = mockRequest.getPath()
+log.info "Path: "+ requestPath
+
+if( requestPath.contains("json") )
+{
+    // return the name of the response you want to dispatch
+    return "JSON Response"
+}
+
+
+// Match based on query parameter
+def queryString = mockRequest.getRequest().getQueryString()
+log.info "QueryString: " + queryString
+
+if( queryString.contains("stockholm") )
+{
+    // return the name of the response you want to dispatch
+    return "Response Stockholm"
+}
+else if( queryString.contains("london") )
+{
+    // return the name of the response you want to dispatch
+    return "Response London"
+}
+
+
+// Match based on header
+def acceptEncodingHeaderList = mockRequest.getRequestHeaders().get("Accept-Encoding")
+log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList
+
+if( acceptEncodingHeaderList.contains("gzip,deflate") )
+{
+    // return the name of the response you want to dispatch
+    return "GZiped Response"
+}
+
+
+// Match based on body
+def requestBody = mockRequest.getRequestContent()
+log.info "Request body: " + requestBody
+
+if( requestBody.contains("some data") )
+{
+    // return the name of the response you want to dispatch
+    return "Response N"
+}
+*/
+</con:dispatchPath><con:response name="Response 1" id="9dc476c0-8208-4e47-afca-ae18474ac82d" httpResponseStatus="200"><con:settings/><con:script>def xml = new XmlParser().parseText(mockRequest.requestContent)
+def text = xml.headerType.text()
+
+requestContext.name = 'name'
+requestContext.body = 'body'
+
+if(text== 'POST'){
+	requestContext.headerType = mockRequest.getMethod()
+}else{
+	requestContext.headerType = mockRequest.getProtocol()
+}
+
+
+
+</con:script><con:responseContent><![CDATA[<request>
+   <name>${name}</name>
+   <body>${body}</body>
+   <headerType>${headerType}</headerType>
+</request>]]></con:responseContent></con:response></con:restMockAction></con:restMockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
